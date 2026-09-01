@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 - Challenge Tables: Table Heart</title>
+    <style>
+        body {
+            background-color: #0b192c;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Botón de devolverse */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .header-challenge {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .header-challenge h1 {
+            color: #ffffff;
+            font-size: 24px;
+            border-bottom: 3px solid #ff4d4d;
+            padding-bottom: 8px;
+            display: inline-block;
+        }
+
+        .header-challenge p {
+            color: #b0c4de;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .challenge-card {
+            background-color: #1e293b;
+            border: 2px solid #ff4d4d;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            color: #ff4d4d;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Estructura de la tabla */
+        table {
+            border-collapse: collapse;
+            background-color: #000000;
+            border: 2px solid #ffffff;
+            margin: 0 auto;
+        }
+
+        td {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ffffff;
+        }
+
+        .heart {
+            background-color: #e62e5c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón para devolverse a la página principal -->
+    <a href="index.html" class="back-button">&#8592;</a>
+
+    <div class="header-challenge">
+        <h1>10-Challenge Tables</h1>
+        <p>Practices table creation and structure.</p>
+    </div>
+
+    <div class="challenge-card">
+        <h2>Table Heart:</h2>
+
+        <table>
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <!-- Fila 1 -->
+            <tr>
+                <td></td><td></td><td></td>
+                <td class="heart" colspan="3"></td>
+                <td></td><>
+                <td class="heart" colspan="3"></td>
+                <td></td><td></td><td></td>
+            </tr>
+            <!-- Fila 2 -->
+            <tr>
+                <td></td><td></td>
+                <td class="heart" colspan="9"></td>
+                <td></td><td></td>
+            </tr>
+            <!-- Fila 3 -->
+            <tr>
+                <td></td>
+                <td class="heart" colspan="11"></td>
+                <td></td>
+            </tr>
+            <!-- Fila 4 -->
+            <tr>
+                <td></td>
+                <td class="heart" colspan="11"></td>
+                <td></td>
+            </tr>
+            <!-- Fila 5 -->
+            <tr>
+                <td></td>
+                <td class="heart" colspan="11"></td>
+                <td></td>
+            </tr>
+            <!-- Fila 6 -->
+            <tr>
+                <td></td><td></td>
+                <td class="heart" colspan="9"></td>
+                <td></td><td></td>
+            </tr>
+            <!-- Fila 7 -->
+            <tr>
+                <td></td><td></td><td></td>
+                <td class="heart" colspan="7"></td>
+                <td></td><td></td><td></td>
+            </tr>
+            <!-- Fila 8 -->
+            <tr>
+                <td></td><td></td><td></td><td></td>
+                <td class="heart" colspan="5"></td>
+                <td></td><td></td><td></td><td></td>
+            </tr>
+            <!-- Fila 9 -->
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td>
+                <td class="heart" colspan="3"></td>
+                <td></td><td></td><td></td><td></td><td></td>
+            </tr>
+            <!-- Fila 10 -->
+            <tr>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                <td class="heart" colspan="1"></td>
+                <td></td><td></td><td></td><td></td><td></td><td></td>
+                
+            </tr>
+             <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+        </table>
+    </div>
+
+</body>
+</html>
