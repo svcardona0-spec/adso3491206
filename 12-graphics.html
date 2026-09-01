@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 12 - Gráficos en Línea</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #5c2a1a, #7c3e2a);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .back-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 30px;
+            color: white;
+            transition: transform 0.3s, background-color 0.3s;
+            font-family: monospace;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .page-title {
+            color: white;
+            font-size: 36px;
+            font-weight: lighter;
+            margin: 0;
+            text-align: right;
+        }
+
+        .title-line {
+            width: 200px;
+            height: 4px;
+            background-color: #00aaff;
+            margin-left: auto;
+            margin-top: 5px;
+        }
+
+        .graphics-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 700px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .graphics-container h2 {
+            margin-top: 0;
+            color: #7c3e2a;
+            margin-bottom: 20px;
+        }
+
+        .graphic-box {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .graphic-box h3 {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* Estilos específicos para la sección de SVG y Canvas */
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        canvas {
+            border: 1px dashed #ccc;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="index.html" class="back-btn">←</a>
+        <div>
+            <h1 class="page-title">12-graphics</h1>
+            <div class="title-line"></div>
+        </div>
+    </div>
+
+    <div class="graphics-container">
+        <h2>Gráficos en Línea (Inline Graphics)</h2>
+        <p>Demostración del uso de etiquetas nativas para renderizar gráficos directamente en el navegador.</p>
+
+        <!-- Gráfico vectorial con SVG -->
+        <div class="graphic-box">
+            <h3>1. Gráfico Vectorial con SVG</h3>
+            <svg width="200" height="150" viewBox="0 0 200 150">
+                <!-- Fondo de la escena SVG -->
+                <rect width="200" height="150" rx="10" fill="#eef2f3" />
+                <!-- Círculo decorativo -->
+                <circle cx="100" cy="60" r="40" fill="#3498db" />
+                <!-- Rectángulo / base -->
+                <rect x="70" y="105" width="60" height="25" rx="5" fill="#2c3e50" />
+                <!-- Texto interno en SVG -->
+                <text x="100" y="65" fill="white" font-size="14" font-family="sans-serif" text-anchor="middle">SVG</text>
+            </svg>
+        </div>
+
+        <!-- Elemento Canvas para gráficos por código -->
+        <div class="graphic-box">
+            <h3>2. Área de Dibujo con Canvas</h3>
+            <canvas id="myCanvas" width="220" height="120"></canvas>
+            <script>
+                // Código JavaScript para dibujar en el Canvas de forma nativa
+                const canvas = document.getElementById('myCanvas');
+                const ctx = canvas.getContext('2d');
+                
+                // Dibujar un rectángulo con degradado o color sólido
+                ctx.fillStyle = '#e74c3c';
+                ctx.fillRect(30, 20, 160, 80);
+                
+                // Dibujar texto dentro del canvas
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 16px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Elemento Canvas', 110, 65);
+            </script>
+        </div>
+
+    </div>
+
+</body>
+</html>
