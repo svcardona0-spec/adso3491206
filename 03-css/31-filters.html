@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31-filters</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .filter-card {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .filter-box {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #3498db, #e74c3c);
+            margin-bottom: 0.75rem;
+            border-radius: 6px;
+        }
+
+        /* Filtros específicos */
+        .filter-blur {
+            filter: blur(4px);
+        }
+
+        .filter-grayscale {
+            filter: grayscale(100%);
+        }
+
+        .filter-saturate {
+            filter: saturate(300%);
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #8e44ad;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+   <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>31-filters</h1>
+            <p>Defines visual effects (like blur and saturation).</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Propiedad CSS Filter</h3>
+            <p>Permite aplicar efectos visuales de procesamiento de imagen como desenfoque, escala de grises o saturación directamente a cualquier elemento HTML.</p>
+
+            <div class="filter-grid">
+                <div class="filter-card">
+                    <div class="filter-box"></div>
+                    Original
+                </div>
+                <div class="filter-card">
+                    <div class="filter-box filter-blur"></div>
+                    blur(4px)
+                </div>
+                <div class="filter-card">
+                    <div class="filter-box filter-grayscale"></div>
+                    grayscale(100%)
+                </div>
+                <div class="filter-card">
+                    <div class="filter-box filter-saturate"></div>
+                    saturate(300%)
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>blur(px):</strong> Aplica un efecto de desenfoque gaussiano al elemento.</li>
+                <li><strong>grayscale(%):</strong> Convierte los colores de la capa o imagen a escala de grises.</li>
+                <li><strong>saturate(%):</strong> Intensifica o disminuye la saturación y viveza del color.</li>
+                <li><strong>brightness() / contrast():</strong> Permiten ajustar la iluminación y el contraste visual de forma directa en CSS.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

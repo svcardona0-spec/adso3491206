@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42-parallax</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Contenedor principal con scroll simulado para efecto Parallax */
+        .parallax-viewport {
+            height: 350px;
+            overflow-y: scroll;
+            border-radius: 6px;
+            border: 1px solid #dcdde1;
+            margin-top: 1.5rem;
+            position: relative;
+            background-color: #111;
+        }
+
+        /* Capas del efecto Parallax utilizando background-attachment: fixed */
+        .parallax-layer {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .layer-one {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .layer-content {
+            background-color: #ffffff;
+            color: #2c3e50;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .layer-two {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #34495e;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="back">
+        <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>42-parallax</h1>
+            <p>Move at a different speed the backgrounds.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Efecto Parallax (Desplazamiento Diferencial)</h3>
+            <p>Técnica visual donde los elementos de fondo se desplazan a una velocidad diferente que el contenido de primer plano al hacer scroll, creando sensación de profundidad 3D.</p>
+
+            <div class="parallax-viewport">
+                <div class="parallax-layer layer-one">
+                    <span>Primera Sección Parallax</span>
+                </div>
+                <div class="layer-content">
+                    <h4>Contenido Intermedio</h4>
+                    <p style="margin: 0; color: #7f8c8d;">Este bloque se desplaza normalmente sobre la página mientras los fondos fijos generan el efecto visual de profundidad.</p>
+                </div>
+                <div class="parallax-layer layer-two">
+                    <span>Segunda Sección Parallax</span>
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>background-attachment: fixed:</strong> Fija la imagen de fondo respecto al viewport mientras el resto del documento hace scroll.</li>
+                <li><strong>Sensación de Profundidad:</strong> Simula entornos tridimensionales diferenciando la velocidad aparente entre capas.</li>
+                <li><strong>Alternativas Modernas:</strong> También se puede lograr un control avanzado combinando propiedades con JavaScript o variables CSS orientadas al scroll.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

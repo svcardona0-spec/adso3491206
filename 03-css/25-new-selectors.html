@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25-new-selectors</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #8e44ad;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .selector-box {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* 1. Attribute Selector */
+        input[type="text"] {
+            border: 2px solid #3498db;
+            padding: 0.5rem;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        /* 2. Negation Pseudo-class (:not) */
+        .item-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .item-list li {
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            border-radius: 4px;
+        }
+
+        .item-list li:not(.special) {
+            border-left: 4px solid #3498db;
+        }
+
+        .item-list li.special {
+            background-color: #f39c12;
+            color: white;
+            border-left: 4px solid #d35400;
+            font-weight: bold;
+        }
+
+        /* 3. Child Combinator (>) */
+        .parent-box > p {
+            background-color: #e8f8f5;
+            border: 1px solid #1abc9c;
+            padding: 0.75rem;
+            border-radius: 4px;
+            color: #16a085;
+            font-weight: bold;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #8e44ad;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>25-new-selectors</h1>
+            <p>Used to select the element(s) you want to style.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Selectores Avanzados y Modernos</h3>
+            <p>Los selectores avanzados permiten apuntar a elementos específicos de forma precisa utilizando atributos, estados relacionales o exclusiones.</p>
+
+            <div class="selector-box">
+                <div>
+                    <p style="margin-bottom: 0.5rem; font-weight: bold;">1. Selector de Atributo (<code>[type="text"]</code>):</p>
+                    <input type="text" placeholder="Campo seleccionado por atributo de tipo texto...">
+                </div>
+
+                <div>
+                    <p style="margin-bottom: 0.5rem; font-weight: bold;">2. Selector de Negación (<code>:not(.special)</code>):</p>
+                    <ul class="item-list">
+                        <li>Elemento estándar 1 (afectado por :not)</li>
+                        <li class="special">Elemento especial (excluido)</li>
+                        <li>Elemento estándar 2 (afectado por :not)</li>
+                    </ul>
+                </div>
+
+                <div class="parent-box">
+                    <p style="margin-bottom: 0.5rem; font-weight: bold;">3. Combinador de Hijo Directo (<code>></code>):</p>
+                    <div>
+                        <p>Este párrafo es hijo directo del contenedor y tiene un estilo exclusivo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>[attribute]:</strong> Selecciona elementos que tienen un atributo específico asignado.</li>
+                <li><strong>:not(selector):</strong> Excluye elementos que coincidan con el selector indicado.</li>
+                <li><strong>parent > child:</strong> Selecciona únicamente los elementos hijos directos de un contenedor.</li>
+                <li><strong>element + element:</strong> Selecciona el elemento adyacente inmediatamente posterior.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

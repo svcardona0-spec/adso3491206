@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28-challenge-shadow</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .demo-container h3 {
+            color: #f1c40f;
+            margin-top: 0;
+            border-bottom: 2px solid #f1c40f;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #ecf0f1;
+        }
+
+        .pixel-art-stage {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle, #2c3e50 0%, #111 100%);
+            border-radius: 8px;
+            padding: 3rem 1rem;
+            margin-top: 1.5rem;
+            min-height: 280px;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        /* Batman Pixel Art con box-shadow */
+        .batman-pixel {
+            position: relative;
+            width: 8px;
+            height: 8px;
+            background: #000;
+            box-shadow: 
+                /* Orejas y cabeza superior */
+                -24px -32px 0 0 #000, -16px -32px 0 0 #000, 16px -32px 0 0 #000, 24px -32px 0 0 #000,
+                -32px -24px 0 0 #000, -24px -24px 0 0 #000, -16px -24px 0 0 #000, -8px -24px 0 0 #000, 0px -24px 0 0 #000, 8px -24px 0 0 #000, 16px -24px 0 0 #000, 24px -24px 0 0 #000, 32px -24px 0 0 #000,
+                /* Extensión de alas */
+                -40px -16px 0 0 #000, -32px -16px 0 0 #000, -24px -16px 0 0 #000, -16px -16px 0 0 #000, -8px -16px 0 0 #000, 0px -16px 0 0 #000, 8px -16px 0 0 #000, 16px -16px 0 0 #000, 24px -16px 0 0 #000, 32px -16px 0 0 #000, 40px -16px 0 0 #000,
+                -48px -8px 0 0 #000, -40px -8px 0 0 #000, -32px -8px 0 0 #000, -24px -8px 0 0 #000, -16px -8px 0 0 #000, -8px -8px 0 0 #000, 0px -8px 0 0 #000, 8px -8px 0 0 #000, 16px -8px 0 0 #000, 24px -8px 0 0 #000, 32px -8px 0 0 #000, 40px -8px 0 0 #000, 48px -8px 0 0 #000,
+                /* Base inferior del murciélago */
+                -32px 0px 0 0 #000, -24px 0px 0 0 #000, -16px 0px 0 0 #000, -8px 0px 0 0 #000, 0px 0px 0 0 #000, 8px 0px 0 0 #000, 16px 0px 0 0 #000, 24px 0px 0 0 #000, 32px 0px 0 0 #000,
+                -16px 8px 0 0 #000, -8px 8px 0 0 #000, 0px 8px 0 0 #000, 8px 8px 0 0 #000, 16px 8px 0 0 #000,
+                0px 16px 0 0 #000;
+            transform: scale(2); /* Amplía la escala del pixel art */
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #252525;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #f1c40f;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body class="css">
+   <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>28-challenge-shadow</h1>
+            <p>Pixel Art (Batman) using advanced box-shadow positioning.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Reto de Pixel Art con Box Shadow</h3>
+            <p>Demostración práctica del potencial creativo de la propiedad <code>box-shadow</code> para construir gráficos vectoriales pixelados complejos en una sola etiqueta HTML.</p>
+
+            <div class="pixel-art-stage">
+                <div class="batman-pixel"></div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>Múltiples Sombras:</strong> Permite encadenar decenas de coordenadas (X, Y) con un radio de difuminado de 0 para crear píxeles sólidos.</li>
+                <li><strong>Optimización Gráfica:</strong> Renderiza una ilustración completa sin necesidad de archivos externos PNG o SVG.</li>
+                <li><strong>Escalabilidad:</strong> Se puede manipular el tamaño mediante transformaciones CSS manteniendo nítidos los bordes de cada píxel.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

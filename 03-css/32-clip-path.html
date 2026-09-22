@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-clip-path</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .clip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .clip-card {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+        }
+
+        .clip-shape {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Formas con clip-path */
+        .clip-circle {
+            clip-path: circle(50% at 50% 50%);
+        }
+
+        .clip-polygon {
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+        }
+
+        .clip-inset {
+            clip-path: inset(15% round 10px);
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #2980b9;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+   <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>32-clip-path</h1>
+            <p>Property lets you clip an element to a basic shape.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Propiedad Clip Path</h3>
+            <p>Permite recortar visualmente cualquier elemento HTML o imagen utilizando formas geométricas básicas como círculos, polígonos o rectángulos inset.</p>
+
+            <div class="clip-grid">
+                <div class="clip-card">
+                    <div class="clip-shape clip-circle"></div>
+                    circle()
+                </div>
+                <div class="clip-card">
+                    <div class="clip-shape clip-polygon"></div>
+                    polygon()
+                </div>
+                <div class="clip-card">
+                    <div class="clip-shape clip-inset"></div>
+                    inset()
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>circle(radius at x y):</strong> Recorta el elemento en forma circular desde un punto de origen.</li>
+                <li><strong>polygon(x1 y1, x2 y2, ...):</strong> Define múltiples vértices mediante coordenadas porcentuales para crear triángulos, rombos o figuras personalizadas.</li>
+                <li><strong>inset(top right bottom left):</strong> Recorta los bordes interiores de la caja con opcional redondeo de esquinas.</li>
+                <li><strong>Uso Creativo:</strong> Ideal para máscaras de imágenes dinámicas y transiciones avanzadas en diseño web.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

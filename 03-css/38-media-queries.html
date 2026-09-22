@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>38-media-queries</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #16a085;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .mq-card {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            margin-top: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Indicador visual dinámico según el ancho de pantalla */
+        .mq-indicator {
+            padding: 1rem;
+            border-radius: 6px;
+            color: white;
+            background-color: #e74c3c;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Media Queries para diferentes tamaños de pantalla */
+        @media (min-width: 600px) {
+            .mq-indicator {
+                background-color: #f39c12;
+            }
+            .mq-indicator::after {
+                content: " (Pantalla mediana >= 600px)";
+            }
+        }
+
+        @media (min-width: 900px) {
+            .mq-indicator {
+                background-color: #27ae60;
+            }
+            .mq-indicator::after {
+                content: " (Pantalla grande >= 900px)";
+            }
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #16a085;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>38-media-queries</h1>
+            <p>Diseño Web Responsivo mediante reglas condicionales según el dispositivo.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Media Queries (@media)</h3>
+            <p>Permiten aplicar bloques de estilos CSS específicos dependiendo de las características del dispositivo, como el ancho de la pantalla, la resolución o la orientación.</p>
+
+            <div class="mq-card">
+                <div class="mq-indicator">
+                    Cambia el tamaño de tu ventana para probar el diseño responsivo
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>@media (min-width: px):</strong> Aplica reglas CSS cuando la pantalla es mayor o igual al valor especificado.</li>
+                <li><strong>@media (max-width: px):</strong> Aplica estilos cuando la ventana es menor o igual al límite indicado.</li>
+                <li><strong>orientation:</strong> Permite adaptar el diseño si el dispositivo está en modo vertical (portrait) u horizontal (landscape).</li>
+                <li><strong>Uso en Diseño Web:</strong> Pilar fundamental del enfoque <em>Mobile First</em> y el desarrollo web responsivo moderno.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

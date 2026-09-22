@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22-cursors</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 750px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #2980b9;
+            padding-bottom: 0.5rem;
+        }
+
+        .cursor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .cursor-box {
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            user-select: none;
+        }
+
+        /* Ejemplos de cursores */
+        .cursor-pointer {
+            background-color: #3498db;
+            cursor: pointer;
+        }
+
+        .cursor-help {
+            background-color: #9b59b6;
+            cursor: help;
+        }
+
+        .cursor-not-allowed {
+            background-color: #e74c3c;
+            cursor: not-allowed;
+        }
+
+        .cursor-crosshair {
+            background-color: #27ae60;
+            cursor: crosshair;
+        }
+
+        .cursor-move {
+            background-color: #e67e22;
+            cursor: move;
+        }
+
+        .cursor-text {
+            background-color: #34495e;
+            cursor: text;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #2980b9;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>22-cursors</h1>
+            <p>Specifies the mouse cursor to be displayed when pointing over an element.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Tipos de Cursores en CSS</h3>
+            <p>La propiedad <code>cursor</code> permite cambiar la apariencia del puntero del ratón al pasar por encima de un elemento, mejorando la retroalimentación visual de la interfaz:</p>
+
+            <div class="cursor-grid">
+                <div class="cursor-box cursor-pointer">
+                    pointer<br><small>Enlace o botón</small>
+                </div>
+                <div class="cursor-box cursor-help">
+                    help<br><small>Ayuda disponible</small>
+                </div>
+                <div class="cursor-box cursor-not-allowed">
+                    not-allowed<br><small>Acción bloqueada</small>
+                </div>
+                <div class="cursor-box cursor-crosshair">
+                    crosshair<br><small>Precisión / Mira</small>
+                </div>
+                <div class="cursor-box cursor-move">
+                    move<br><small>Elemento movible</small>
+                </div>
+                <div class="cursor-box cursor-text">
+                    text<br><small>Selección de texto</small>
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>cursor: pointer;</strong> Cambia el puntero a una mano (típico para enlaces y botones interactivos).</li>
+                <li><strong>cursor: not-allowed;</strong> Indica que la acción no está permitida (muestra un círculo tachado).</li>
+                <li><strong>cursor: crosshair;</strong> Muestra una cruz de precisión.</li>
+                <li><strong>cursor: wait;</strong> Indica que el sistema está cargando o procesando.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

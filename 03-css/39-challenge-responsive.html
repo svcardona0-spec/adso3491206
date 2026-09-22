@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>39-challenge-responsive</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Layout Responsivo del Reto: Sidebar + Contenido Principal + Tarjetas */
+        .dashboard-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .dashboard-sidebar {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1.25rem;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .dashboard-sidebar h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 0.25rem;
+        }
+
+        .sidebar-link {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .sidebar-link:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .dashboard-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .dashboard-banner {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .dashboard-banner h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+        }
+
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .card-item {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Media Query para pantallas pequeñas (Móviles / Tablets) */
+        @media (max-width: 768px) {
+            .dashboard-layout {
+                grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola columna apilada */
+            }
+
+            .dashboard-sidebar {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            .dashboard-sidebar h4 {
+                width: 100%;
+                text-align: center;
+            }
+
+            .sidebar-link {
+                padding: 0.25rem 0.5rem;
+            }
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>39-challenge-responsive</h1>
+            <p>Reto Práctico: Maquetación Web Adaptativa y Responsiva.</p>
+        </header>
+  <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>39-challenge-responsive</h1>
+            <p>Reto Práctico: Maquetación Web Adaptativa y Responsiva.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Dashboard Responsivo con CSS Grid y Media Queries</h3>
+            <p>Ejemplo práctico que integra una estructura de panel de control adaptable. Redimensiona tu navegador para observar cómo la barra lateral se reorganiza automáticamente.</p>
+
+            <div class="dashboard-layout">
+                <aside class="dashboard-sidebar">
+                    <h4>Navegación</h4>
+                    <a href="#" class="sidebar-link">Inicio</a>
+                    <a href="#" class="sidebar-link">Analíticas</a>
+                    <a href="#" class="sidebar-link">Reportes</a>
+                    <a href="#" class="sidebar-link">Configuración</a>
+                </aside>
+
+                <div class="dashboard-main">
+                    <div class="dashboard-banner">
+                        <h4>Bienvenido al Panel</h4>
+                        <p style="margin: 0; font-size: 0.9rem; color: #ecf0f1;">Este diseño se adapta fluidamente a cualquier resolución de pantalla.</p>
+                    </div>
+
+                    <div class="dashboard-cards">
+                        <div class="card-item">Métrica A: 1,240</div>
+                        <div class="card-item">Métrica B: 85%</div>
+                        <div class="card-item">Métrica C: $12.4k</div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>Grid Adaptativo:</strong> Utiliza <code>grid-template-columns</code> para estructurar paneles complejos sin romper el diseño base.</li>
+                <li><strong>Punto de quiebre (Breakpoint):</strong> Mediante <code>@media (max-width: 768px)</code> se transforma la disposición de filas a columnas apiladas.</li>
+                <li><strong>Flexibilidad visual:</strong> Garantiza una óptima lectura y experiencia de usuario tanto en escritorios como en dispositivos móviles.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

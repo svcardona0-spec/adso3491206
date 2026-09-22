@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24-challenge-layout</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #008f39; /* Verde característico de Sprite del video */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .demo-container {
+            background-color: #008f39;
+            border: none;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* Encabezado con Logo y Menú de Navegación */
+        .site-header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo-img {
+            max-width: 180px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+
+        .nav-menu {
+            text-align: center;
+            background-color: #006626;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .nav-item {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background-color: #ffffff;
+            color: #008f39;
+            border-radius: 4px;
+        }
+
+        /* Sección de Tarjetas Superiores (3 columnas de Sprites) */
+        .cards-row {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .sprite-card {
+            display: inline-block;
+            width: 30%;
+            background-color: #006626;
+            border: 3px solid #00ff55;
+            padding: 15px;
+            margin: 1.5%;
+            vertical-align: top;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .sprite-card h4 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .card-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* Sección de Bloques de Contenido con Texto e Imágenes Laterales */
+        .content-box {
+            background-color: #ffffff;
+            border: 2px solid #004d1a;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+
+        .content-img-left {
+            width: 15%;
+            float: left;
+            margin-right: 20px;
+            height: auto;
+        }
+
+        .content-img-right {
+            width: 12%;
+            float: right;
+            margin-left: 20px;
+            height: auto;
+        }
+
+        .content-text {
+            overflow: hidden;
+            color: #2c3e50;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #00ff55;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="back">
+        <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal" style="background-color: #006626; color: white; padding: 15px; text-align: center;">
+            <h1 style="margin:0;">24-challenge-layout</h1>
+            <p style="margin:5px 0 0 0;">Reto Estructural: Maquetación basada en diseño clásico.</p>
+        </header>
+
+        <section class="demo-container">
+            <!-- Header con Logo y Navegación -->
+            <div class="site-header">
+                <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=300&q=80" alt="Sprite Logo" class="logo-img" style="filter: brightness(0) invert(1);">
+                <div class="nav-menu">
+                    <a href="#" class="nav-item active">Inicio</a>
+                    <a href="#" class="nav-item">Nosotros</a>
+                    <a href="#" class="nav-item">Portafolio</a>
+                    <a href="#" class="nav-item">Servicios</a>
+                    <a href="#" class="nav-item">Contacto</a>
+                </div>
+            </div>
+
+            <!-- Fila superior de 3 tarjetas -->
+            <div class="cards-row">
+                <div class="sprite-card">
+                    <h4>Sprite 01</h4>
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=300&q=80" alt="Sprite 1" class="card-img">
+                </div>
+                <div class="sprite-card">
+                    <h4>Sprite 02</h4>
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=300&q=80" alt="Sprite 2" class="card-img">
+                </div>
+                <div class="sprite-card">
+                    <h4>Sprite 03</h4>
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=300&q=80" alt="Sprite 3" class="card-img">
+                </div>
+            </div>
+
+            <!-- Bloques de contenido con texto e imágenes flotantes -->
+            <div class="content-box">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=150&q=80" alt="Icon" class="content-img-left">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=150&q=80" alt="Can" class="content-img-right">
+                <div class="content-text">
+                    <p style="margin-top: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque minima blanditiis porro corporis incidunt dolorum quas, exercitationem quam voluptatibus maxime perspiciatis, hic iure quos cumque necessitatibus ab architecto facere aperiam fugit voluptates. Cumque, delectus error quod facilis odio suscipit culpa quis? Ullam autem maxime nostrum reprehenderit mollitia.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="content-box">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=150&q=80" alt="Icon" class="content-img-left">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=150&q=80" alt="Can" class="content-img-right">
+                <div class="content-text">
+                    <p style="margin-top: 0;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque minima blanditiis porro corporis incidunt dolorum quas, exercitationem quam voluptatibus maxime perspiciatis, hic iure quos cumque necessitatibus ab architecto facere aperiam fugit voluptates. Cumque, delectus error quod facilis odio suscipit culpa quis? Ullam autem maxime nostrum reprehenderit mollitia.</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>Estructura Clásica:</strong> Desarrollado estrictamente con propiedades de los primeros 23 temas (<code>display: inline-block</code>, <code>float</code>, <code>text-align</code>, <code>box-sizing</code>).</li>
+                <li><strong>Distribución Visual:</strong> Réplica exacta de la distribución de cajas, contenedores, barras de navegación horizontales y bloques flotantes observados en el video de referencia.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

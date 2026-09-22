@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26-border-radius</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .radius-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .radius-card {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1.5rem;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Ejemplos específicos de border-radius */
+        .box-rounded-sm {
+            border-radius: 6px;
+            border: 2px solid #e67e22;
+        }
+
+        .box-rounded-lg {
+            border-radius: 20px;
+            border: 2px solid #e67e22;
+        }
+
+        .box-pill {
+            border-radius: 50px;
+            border: 2px solid #e67e22;
+        }
+
+        .box-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            border: 2px solid #e67e22;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #e67e22;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>26-border-radius</h1>
+            <p>Property defines the radius of the element's corners.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Propiedad Border Radius</h3>
+            <p>Permite redondear las esquinas de los elementos, creando desde sutiles curvas hasta formas completamente circulares o de píldora.</p>
+
+            <div class="radius-grid">
+                <div class="radius-card box-rounded-sm">
+                    border-radius: 6px
+                </div>
+                <div class="radius-card box-rounded-lg">
+                    border-radius: 20px
+                </div>
+                <div class="radius-card box-pill">
+                    border-radius: 50px
+                </div>
+                <div class="radius-card box-circle">
+                    border-radius: 50%
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>border-radius: 6px;</strong> Aplica un redondeo suave y uniforme en las cuatro esquinas.</li>
+                <li><strong>border-radius: 20px;</strong> Genera esquinas más pronunciadas y curvas amplias.</li>
+                <li><strong>border-radius: 50px (o pill):</strong> Crea la forma clásica de botón alargado o píldora.</li>
+                <li><strong>border-radius: 50%;</strong> Convierte un contenedor cuadrado en un círculo perfecto.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

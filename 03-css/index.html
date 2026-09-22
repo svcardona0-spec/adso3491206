@@ -3,318 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADSO 3491206</title>
-    <link rel="stylesheet" href="src/css/styles.css">
+    <title>CSS Learning Guide - 45 Topics</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        /* Contenedor del menú en dos columnas y centrado */
+        ul.menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            list-style: none;
+        }
+
+        /* Estilo de cada tarjeta / botón */
+        ul.menu li {
+            background: #ffffff;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        ul.menu li:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Enlace que ocupa toda la tarjeta */
+        ul.menu li a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+            text-decoration: none;
+            color: #2c3e50;
+            font-family: sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        /* Círculo azul con el número */
+        ul.menu li a::before {
+            content: attr(data-num);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: #3498db;
+            color: #ffffff;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* Responsive para pantallas pequeñas */
+        @media (max-width: 768px) {
+            ul.menu {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <nav class="back">
+        <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
     <main>
         <header class="mainmenu">
-            <h1>ADSO 3491206</h1>
-            <img src="src/imgs/perfil.jpeg" alt="Profile">
-            <h2>VIVIANA CARDONA</h2>
-            <h3>Análisis y Desarrollo de Software</h3>
-            <h4>Centro de Procesos Industriales y Construcción</h4>
-            <h5>SENA - Regional Caldas</h5>
+            <h1>CSS</h1>
+            <img src="../src/imgs/logo-css.png" alt="Profile">
+            <p>Is the language we use to style a Web page.</p>
         </header>
-        <style>
-    div.menus {
-        display: flex;
-        align-items: start;
-        justify-content: center;
-        gap: 1rem;
-        h3 {
-            color: #fff9;
-            text-align: center;
-            padding-bottom: 0.4rem;
-            border-bottom: 2px solid #fff9;
-        }
-    }
-    @media screen and (max-width: 580px) {
-        div.menus {
-            flex-direction: column;
-        }
-    }
-</style>
-
-
-<div class="menus">
-            <menu class="mainmenu submenu-css">
-                <h3>Reference 2.1</h3>
-                <a href="01-document-style.html">
-                    <span>01</span>
-                    <aside>
-                        <h4>Document Style</h4>
-                    </aside>
-                </a>
-                <a href="02-css-file.html">
-                    <span>02</span>
-                    <aside>
-                        <h4>CSS File</h4>
-                    </aside>
-                </a>
-                <a href="03-attr-style.html">
-                    <span>03</span>
-                    <aside>
-                        <h4>Attribute Style</h4>
-                    </aside>
-                </a>
-                <a href="04-basic-selectors.html">
-                    <span>04</span>
-                    <aside>
-                        <h4>Basic Selectors</h4>
-                    </aside>
-                </a>
-                <a href="05-advanced-selectors.html">
-                    <span>05</span>
-                    <aside>
-                        <h4>Advanced Selectors</h4>
-                    </aside>
-                </a>
-                <a href="06-specificity.html">
-                    <span>06</span>
-                    <aside>
-                        <h4>Specificity</h4>
-                    </aside>
-                </a>
-                <a href="07-inheritance.html">
-                    <span>07</span>
-                    <aside>
-                        <h4>Inheritance</h4>
-                    </aside>
-                </a>
-                <a href="08-relative-units.html">
-                    <span>08</span>
-                    <aside>
-                        <h4>Relative Units</h4>
-                    </aside>
-                </a>
-                <a href="09-absolute-units.html">
-                    <span>09</span>
-                    <aside>
-                        <h4>Absolute Units</h4>
-                    </aside>
-                </a>
-                <a href="10-percentage-units.html">
-                    <span>10</span>
-                    <aside>
-                        <h4>Percentage Units</h4>
-                    </aside>
-                </a>
-                <a href="11-colors.html">
-                    <span>11</span>
-                    <aside>
-                        <h4>Colors</h4>
-                    </aside>
-                </a>
-                <a href="12-colors-alpha.html">
-                    <span>12</span>
-                    <aside>
-                        <h4>Colors Alpha</h4>
-                    </aside>
-                </a>
-                <a href="13-box-model.html">
-                    <span>13</span>
-                    <aside>
-                        <h4>Box Model</h4>
-                    </aside>
-                </a>
-                <a href="14-background.html">
-                    <span>14</span>
-                    <aside>
-                        <h4>Background</h4>
-                    </aside>
-                </a>
-                <a href="15-position.html">
-                    <span>15</span>
-                    <aside>
-                        <h4>Position</h4>
-                    </aside>
-                </a>
-                <a href="16-float.html">
-                    <span>16</span>
-                    <aside>
-                        <h4>Float</h4>
-                    </aside>
-                </a>
-                <a href="17-visualization.html">
-                    <span>17</span>
-                    <aside>
-                        <h4>Visualization</h4>
-                    </aside>
-                </a>
-                <a href="18-typography.html">
-                    <span>18</span>
-                    <aside>
-                        <h4>Typography</h4>
-                    </aside>
-                </a>
-                <a href="19-text.html">
-                    <span>19</span>
-                    <aside>
-                        <h4>Text</h4>
-                    </aside>
-                </a>
-                <a href="20-pseudoclasses.html">
-                    <span>20</span>
-                    <aside>
-                        <h4>Pseudoclasses</h4>
-                    </aside>
-                </a>
-                <a href="21-lists.html">
-                    <span>21</span>
-                    <aside>
-                        <h4>List</h4>
-                    </aside>
-                </a>
-                <a href="22-cursors.html">
-                    <span>22</span>
-                    <aside>
-                        <h4>Cursors</h4>
-                    </aside>
-                </a>
-                <a href="23-sprite.html">
-                    <span>23</span>
-                    <aside>
-                        <h4>Sprites</h4>
-                    </aside>
-                </a>
-                <a href="24-challenge-layout.html" target="_blank">
-                    <span>24</span>
-                    <aside>
-                        <h4>Challenge Layout</h4>
-                    </aside>
-                </a>
-            </menu>
-            <menu class="mainmenu submenu-css">
-                <h3>Reference 3.0</h3>
-                <a href="25-new-selectors.html">
-                    <span>25</span>
-                    <aside>
-                        <h4>New Selectors</h4>
-                    </aside>
-                </a>
-                <a href="26-border-radius.html">
-                    <span>26</span>
-                    <aside>
-                        <h4>Border Radius</h4>
-                    </aside>
-                </a>
-                <a href="27-box-shadow.html">
-                    <span>27</span>
-                    <aside>
-                        <h4>Box Shadow</h4>
-                    </aside>
-                </a>
-                <a href="28-challenge-shadow.html">
-                    <span>28</span>
-                    <aside>
-                        <h4>Challenge Shadow</h4>
-                    </aside>
-                </a>
-                <a href="29-new-backgrounds.html">
-                    <span>29</span>
-                    <aside>
-                        <h4>New Backgrounds</h4>
-                    </aside>
-                </a>
-                <a href="30-text-shadow.html">
-                    <span>30</span>
-                    <aside>
-                        <h4>Text Shadow</h4>
-                    </aside>
-                </a>
-                <a href="31-filters.html">
-                    <span>31</span>
-                    <aside>
-                        <h4>Filters</h4>
-                    </aside>
-                </a>
-                <a href="32-clip-path.html">
-                    <span>32</span>
-                    <aside>
-                        <h4>Clip Path</h4>
-                    </aside>
-                </a>
-                <a href="33-web-fonts.html">
-                    <span>33</span>
-                    <aside>
-                        <h4>Web Fonts</h4>
-                    </aside>
-                </a>
-                <a href="34-variables.html">
-                    <span>34</span>
-                    <aside>
-                        <h4>Variables</h4>
-                    </aside>
-                </a>
-                <a href="35-transformations.html">
-                    <span>35</span>
-                    <aside>
-                        <h4>Transformations</h4>
-                    </aside>
-                </a>
-                <a href="36-transitions.html">
-                    <span>36</span>
-                    <aside>
-                        <h4>Transitions</h4>
-                    </aside>
-                </a>
-                <a href="37-animations.html">
-                    <span>37</span>
-                    <aside>
-                        <h4>Animations</h4>
-                    </aside>
-                </a>
-                <a href="38-media-queries.html" target="_blank">
-                    <span>38</span>
-                    <aside>
-                        <h4>Media Queries</h4>
-                    </aside>
-                </a>
-                <a href="39-challenge-responsive.html" target="_blank">
-                    <span>39</span>
-                    <aside>
-                        <h4>Challenge Responsive</h4>
-                    </aside>
-                </a>
-                <a href="40-steps.html">
-                    <span>40</span>
-                    <aside>
-                        <h4>Steps</h4>
-                    </aside>
-                </a>
-                <a href="41-functions.html">
-                    <span>41</span>
-                    <aside>
-                        <h4>Functions</h4>
-                    </aside>
-                </a>
-                 <a href="42-parallax.html">
-                    <span>42</span>
-                    <aside>
-                        <h4>Parallax</h4>
-                    </aside>
-                </a>
-                <a href="43-flexbox.html">
-                    <span>43</span>
-                    <aside>
-                        <h4>Flex Box</h4>
-                    </aside>
-                </a>
-                <a href="44-grid.html">
-                    <span>44</span>
-                    <aside>
-                        <h4>Grid</h4>
-                    </aside>
-                </a>
-                <a href="45-challenge-grid.html">
-                    <span>45</span>
-                    <aside>
-                        <h4>Challenge Grid</h4>
-                    </aside>
-                </a>
-            </menu>
-        </div>
+        <ul class="menu">
+            <li><a href="01-document-style.html" data-num="01" target="_blank" rel="noopener noreferrer">01-document-style</a></li>
+            <li><a href="02-css-file.html" data-num="02" target="_blank" rel="noopener noreferrer">02-css-file</a></li>
+            <li><a href="03-attr-style.html" data-num="03" target="_blank" rel="noopener noreferrer">03-attr-style</a></li>
+            <li><a href="04-basic-selectors.html" data-num="04" target="_blank" rel="noopener noreferrer">04-basic-selectors</a></li>
+            <li><a href="05-advanced-selectors.html" data-num="05" target="_blank" rel="noopener noreferrer">05-advanced-selectors</a></li>
+            <li><a href="06-specificity.html" data-num="06" target="_blank" rel="noopener noreferrer">06-specificity</a></li>
+            <li><a href="07-inheritance.html" data-num="07" target="_blank" rel="noopener noreferrer">07-inheritance</a></li>
+            <li><a href="08-relative-units.html" data-num="08" target="_blank" rel="noopener noreferrer">08-relative-units</a></li>
+            <li><a href="09-absolute-units.html" data-num="09" target="_blank" rel="noopener noreferrer">09-absolute-units</a></li>
+            <li><a href="10-percentage-units.html" data-num="10" target="_blank" rel="noopener noreferrer">10-percentage-units</a></li>
+            <li><a href="11-colors.html" data-num="11" target="_blank" rel="noopener noreferrer">11-colors</a></li>
+            <li><a href="12-colors-alpha.html" data-num="12" target="_blank" rel="noopener noreferrer">12-colors-alpha</a></li>
+            <li><a href="13-box-model.html" data-num="13" target="_blank" rel="noopener noreferrer">13-box-model</a></li>
+            <li><a href="14-background.html" data-num="14" target="_blank" rel="noopener noreferrer">14-background</a></li>
+            <li><a href="15-position.html" data-num="15" target="_blank" rel="noopener noreferrer">15-position</a></li>
+            <li><a href="16-float.html" data-num="16" target="_blank" rel="noopener noreferrer">16-float</a></li>
+            <li><a href="17-visualization.html" data-num="17" target="_blank" rel="noopener noreferrer">17-visualization</a></li>
+            <li><a href="18-typography.html" data-num="18" target="_blank" rel="noopener noreferrer">18-typography</a></li>
+            <li><a href="19-text.html" data-num="19" target="_blank" rel="noopener noreferrer">19-text</a></li>
+            <li><a href="20-pseudoclasses.html" data-num="20" target="_blank" rel="noopener noreferrer">20-pseudoclasses</a></li>
+            <li><a href="21-lists.html" data-num="21" target="_blank" rel="noopener noreferrer">21-lists</a></li>
+            <li><a href="22-cursors.html" data-num="22" target="_blank" rel="noopener noreferrer">22-cursors</a></li>
+            <li><a href="23-sprite.html" data-num="23" target="_blank" rel="noopener noreferrer">23-sprite</a></li>
+            <li><a href="24-challenge-layout.html" data-num="24" target="_blank" rel="noopener noreferrer">24-challenge-layout</a></li>
+            <li><a href="25-new-selectors.html" data-num="25" target="_blank" rel="noopener noreferrer">25-new-selectors</a></li>
+            <li><a href="26-border-radius.html" data-num="26" target="_blank" rel="noopener noreferrer">26-border-radius</a></li>
+            <li><a href="27-box-shadow.html" data-num="27" target="_blank" rel="noopener noreferrer">27-box-shadow</a></li>
+            <li><a href="28-challenge-shadow.html" data-num="28" target="_blank" rel="noopener noreferrer">28-challenge-shadow</a></li>
+            <li><a href="29-new-backgrounds.html" data-num="29" target="_blank" rel="noopener noreferrer">29-new-backgrounds</a></li>
+            <li><a href="30-text-shadow.html" data-num="30" target="_blank" rel="noopener noreferrer">30-text-shadow</a></li>
+            <li><a href="31-filters.html" data-num="31" target="_blank" rel="noopener noreferrer">31-filters</a></li>
+            <li><a href="32-clip-path.html" data-num="32" target="_blank" rel="noopener noreferrer">32-clip-path</a></li>
+            <li><a href="33-web-fonts.html" data-num="33" target="_blank" rel="noopener noreferrer">33-web-fonts</a></li>
+            <li><a href="34-variables.html" data-num="34" target="_blank" rel="noopener noreferrer">34-variables</a></li>
+            <li><a href="35-transformations.html" data-num="35" target="_blank" rel="noopener noreferrer">35-transformations</a></li>
+            <li><a href="36-transitions.html" data-num="36" target="_blank" rel="noopener noreferrer">36-transitions</a></li>
+            <li><a href="37-animations.html" data-num="37" target="_blank" rel="noopener noreferrer">37-animations</a></li>
+            <li><a href="38-media-queries.html" data-num="38" target="_blank" rel="noopener noreferrer">38-media-queries</a></li>
+            <li><a href="39-challenge-responsive.html" data-num="39" target="_blank" rel="noopener noreferrer">39-challenge-responsive</a></li>
+            <li><a href="40-steps.html" data-num="40" target="_blank" rel="noopener noreferrer">40-steps</a></li>
+            <li><a href="41-functions.html" data-num="41" target="_blank" rel="noopener noreferrer">41-functions</a></li>
+            <li><a href="42-parallax.html" data-num="42" target="_blank" rel="noopener noreferrer">42-parallax</a></li>
+            <li><a href="43-flexbox.html" data-num="43" target="_blank" rel="noopener noreferrer">43-flexbox</a></li>
+            <li><a href="44-grid.html" data-num="44" target="_blank" rel="noopener noreferrer">44-grid</a></li>
+            <li><a href="45-challenge-grid.html" data-num="45" target="_blank" rel="noopener noreferrer">45-challenge-grid</a></li>
+        </ul>
     </main>
 </body>
 </html>

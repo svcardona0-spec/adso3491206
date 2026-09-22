@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-text-shadow</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .shadow-text-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .shadow-text-card {
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            font-size: 1.75rem;
+            font-weight: bold;
+        }
+
+        /* 1. Sombra básica con desplazamiento y difuminado */
+        .text-shadow-basic {
+            color: #2c3e50;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 2. Efecto Neón / Resplandor */
+        .text-shadow-neon {
+            background-color: #111;
+            color: #fff;
+            text-shadow: 0 0 10px #e74c3c, 0 0 20px #e74c3c, 0 0 30px #e74c3c;
+            border-radius: 6px;
+        }
+
+        /* 3. Efecto 3D / Retro */
+        .text-shadow-3d {
+            color: #3498db;
+            text-shadow: 2px 2px 0px #2980b9, 4px 4px 0px #1abc9c, 6px 6px 8px rgba(0,0,0,0.4);
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #e74c3c;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>30-text-shadow</h1>
+            <p>Adds shadows to text.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Propiedad Text Shadow</h3>
+            <p>Permite aplicar efectos de sombra directamente sobre los caracteres de texto, mejorando la legibilidad o creando diseños artísticos y efectos de neón.</p>
+
+            <div class="shadow-text-grid">
+                <div class="shadow-text-card text-shadow-basic">
+                    Sombra Básica de Texto
+                </div>
+                <div class="shadow-text-card text-shadow-neon">
+                    Efecto Resplandor Neón
+                </div>
+                <div class="shadow-text-card text-shadow-3d">
+                    Efecto Estilo 3D Retro
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>h-shadow | v-shadow:</strong> Controlan la posición horizontal y vertical del desplazamiento de la sombra.</li>
+                <li><strong>blur-radius:</strong> Define el nivel de difuminado o suavizado de la sombra del texto.</li>
+                <li><strong>color:</strong> Especifica el tono de la sombra (soporta opacidades con RGBA).</li>
+                <li><strong>Múltiples sombras:</strong> Permite combinar varios valores separados por comas para lograr efectos de brillo o profundidad en relieve.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40-steps</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 850px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #9b59b6;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .demo-container > p {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .steps-demo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            border: 1px solid #dcdde1;
+            padding: 2rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        /* Simulador de Sprite Sheet animado por pasos (steps) */
+        .sprite-container {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #9b59b6, #3498db);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            animation: spriteSteps 2s steps(5, end) infinite;
+        }
+
+        @keyframes spriteSteps {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                background-color: #9b59b6;
+            }
+            100% {
+                transform: translateX(200px) rotate(360deg);
+                background-color: #e74c3c;
+            }
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #9b59b6;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <nav class="back">
+        <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>40-steps</h1>
+            <p>Allows step-by-step animation of a sprite.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Función de Tiempo Steps (Animación por Fotogramas / Sprites)</h3>
+            <p>La función <code>steps(n, direction)</code> divide una animación en intervalos discretos o fotogramas específicos en lugar de una transición fluida continua.</p>
+
+            <div class="steps-demo-box">
+                <div class="sprite-container">Steps</div>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #7f8c8d;">Animación con saltos discretos utilizando <code>steps(5, end)</code></p>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>steps(number, start|end):</strong> Divide el tiempo de la animación en un número exacto de pasos iguales.</li>
+                <li><strong>Uso en Spritesheets:</strong> Es ideal para animaciones de personajes o iconos tipo pixel art donde la imagen salta de un frame al siguiente sin difuminado.</li>
+                <li><strong>Comportamiento (end/start):</strong> Define si el salto de fotograma ocurre al inicio o al final de cada intervalo del ciclo.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

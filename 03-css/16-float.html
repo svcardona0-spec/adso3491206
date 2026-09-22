@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-float</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        .demo-container {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            margin: 1.5rem auto;
+            max-width: 750px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .demo-container h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Contenedor con limpieza (clearfix) para contener los floats */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* Elementos con flotación */
+        .float-left {
+            float: left;
+            width: 40%;
+            background-color: #f39c12;
+            color: white;
+            padding: 1rem;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .float-right {
+            float: right;
+            width: 40%;
+            background-color: #2980b9;
+            color: white;
+            padding: 1rem;
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        .float-text {
+            color: #34495e;
+            line-height: 1.6;
+        }
+
+        .property-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+
+        .property-list li {
+            background: #ffffff;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-left: 4px solid #e67e22;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body class="css">
+    <nav class="back">
+        <a href="index.html">
+           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        </a>
+    </nav>
+    <main>
+        <header class="mainmenu internal">
+            <h1>16-float</h1>
+            <p>Pushes the element to either the left or right side.</p>
+        </header>
+
+        <section class="demo-container">
+            <h3>Demostración de Float</h3>
+            <p>La propiedad <code>float</code> saca al elemento del flujo normal de la página y lo desplaza hacia el borde izquierdo o derecho de su contenedor, permitiendo que el texto u otros elementos fluyan a su alrededor.</p>
+
+            <div class="clearfix" style="background-color: #fff; padding: 1rem; border: 1px dashed #ccc; border-radius: 6px; margin-top: 1rem;">
+                <div class="float-left">
+                    <strong>Float Left</strong><br>
+                    Este bloque está flotado a la izquierda.
+                </div>
+                <p class="float-text">
+                    Este es un texto de ejemplo que acompaña a los elementos flotados. Al utilizar la propiedad float, este párrafo se ajusta y rodea automáticamente el espacio ocupado por las cajas flotantes, demostrando el comportamiento clásico de diseño web utilizado antes de la llegada de Flexbox y Grid.
+                </p>
+                <div class="float-right">
+                    <strong>Float Right</strong><br>
+                    Este bloque está flotado a la derecha.
+                </div>
+            </div>
+
+            <ul class="property-list">
+                <li><strong>float: left;</strong> Desplaza el elemento hacia el extremo izquierdo del contenedor.</li>
+                <li><strong>float: right;</strong> Desplaza el elemento hacia el extremo derecho del contenedor.</li>
+                <li><strong>float: none;</strong> Comportamiento por defecto (no flota).</li>
+                <li><strong>clear: both;</strong> Propiedad utilizada para evitar que los elementos continúen flotando al lado de las cajas anteriores.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
