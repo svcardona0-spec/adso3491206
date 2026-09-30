@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02-Sibling - Emmet</title>
+    <title>15-HTML Documents - Emmet</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
@@ -60,7 +60,7 @@
             font-size: 1.05rem;
         }
 
-        /* Estilos específicos para la demostración de hermanos */
+        /* Estilos específicos para la demostración de documentos HTML */
         .emmet-example {
             background-color: #ffffff;
             color: #2c3e50;
@@ -100,23 +100,30 @@
 
     <main>
         <section class="demo-container">
-            <h1>02-Sibling (Elementos Hermanos)</h1>
+            <h1>15-HTML Documents (Estructura Base HTML)</h1>
             
             <div class="description">
-                <p><strong>Objetivo:</strong> Aprender a colocar elementos al mismo nivel jerárquico (hermanos) utilizando el operador de adición <code>+</code> en Emmet.</p>
+                <p><strong>Objetivo:</strong> Aprender a generar la plantilla inicial estándar de un documento HTML5 completo simplemente escribiendo un signo de exclamación <code>!</code> o la abreviatura <code>html:5</code> y presionando <code>Tab</code> en tu editor.</p>
             </div>
 
             <div class="emmet-example">
                 <h3>Ejemplo práctico con Emmet</h3>
                 <p>Si escribes la siguiente abreviatura en tu editor y presionas <code>Tab</code>:</p>
                 <div class="code-box">
-                    div+p+bq
+                    !
                 </div>
-                <p>Emmet generará automáticamente tres elementos hermanos en el mismo nivel:</p>
+                <p>Emmet generará automáticamente la estructura esquelética fundamental para cualquier página web:</p>
                 <div class="code-box" style="color: #66d9ef;">
-                    &lt;div&gt;&lt;/div&gt;<br>
-                    &lt;p&gt;&lt;/p&gt;<br>
-                    &lt;blockquote&gt;&lt;/blockquote&gt;
+                    &lt;!DOCTYPE html&gt;<br>
+                    &lt;html lang="en"&gt;<br>
+                    &lt;head&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Document&lt;/title&gt;<br>
+                    &lt;/head&gt;<br>
+                    &lt;body&gt;<br>
+                    &lt;/body&gt;<br>
+                    &lt;/html&gt;
                 </div>
             </div>
         </section>

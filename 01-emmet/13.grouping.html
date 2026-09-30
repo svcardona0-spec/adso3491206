@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02-Sibling - Emmet</title>
+    <title>13-Grouping - Emmet</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
@@ -60,7 +60,7 @@
             font-size: 1.05rem;
         }
 
-        /* Estilos específicos para la demostración de hermanos */
+        /* Estilos específicos para la demostración de agrupaciones */
         .emmet-example {
             background-color: #ffffff;
             color: #2c3e50;
@@ -100,23 +100,29 @@
 
     <main>
         <section class="demo-container">
-            <h1>02-Sibling (Elementos Hermanos)</h1>
+            <h1>13-Grouping (Agrupación de Elementos)</h1>
             
             <div class="description">
-                <p><strong>Objetivo:</strong> Aprender a colocar elementos al mismo nivel jerárquico (hermanos) utilizando el operador de adición <code>+</code> en Emmet.</p>
+                <p><strong>Objetivo:</strong> Aprender a agrupar partes de una abreviatura utilizando paréntesis <code>()</code> en Emmet. Esto te permite aplicar multiplicadores o estructurar bloques complejos con total precisión.</p>
             </div>
 
             <div class="emmet-example">
                 <h3>Ejemplo práctico con Emmet</h3>
                 <p>Si escribes la siguiente abreviatura en tu editor y presionas <code>Tab</code>:</p>
                 <div class="code-box">
-                    div+p+bq
+                    div>(header>ul>li*2)+footer
                 </div>
-                <p>Emmet generará automáticamente tres elementos hermanos en el mismo nivel:</p>
+                <p>Emmet utilizará los paréntesis para agrupar el bloque interno dentro del <code>&lt;div&gt;</code> principal, generando la siguiente estructura:</p>
                 <div class="code-box" style="color: #66d9ef;">
-                    &lt;div&gt;&lt;/div&gt;<br>
-                    &lt;p&gt;&lt;/p&gt;<br>
-                    &lt;blockquote&gt;&lt;/blockquote&gt;
+                    &lt;div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;header&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/header&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;footer&gt;&lt;/footer&gt;<br>
+                    &lt;/div&gt;
                 </div>
             </div>
         </section>

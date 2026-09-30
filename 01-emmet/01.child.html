@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Child - Emmet</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+        }
+
+        /* Botón de retorno al inicio */
+        .back {
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .back a svg {
+            fill: #ffffff;
+            transition: transform 0.2s ease;
+        }
+
+        .back a svg:hover {
+            transform: scale(1.1);
+        }
+
+        /* Contenedor principal con estética violeta */
+        .demo-container {
+            background-color: #663399; /* Violeta logotipo CSS */
+            color: #ffffff;            /* Texto blanco */
+            border: 1px solid #482275;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .demo-container h1 {
+            margin-top: 0;
+            border-bottom: 2px solid #b19cd9;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .description {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Estilos específicos para la sección demostrativa de anidación */
+        .emmet-example {
+            background-color: #ffffff;
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .emmet-example code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+        }
+
+        .code-box {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enlace para volver al inicio -->
+    <nav class="back">
+        <a href="../index.html" title="Volver al inicio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
+        </a>
+    </nav>
+
+    <main>
+        <section class="demo-container">
+            <h1>01-Child (Anidación de Elementos)</h1>
+            
+            <div class="description">
+                <p><strong>Objetivo:</strong> Aprender a crear elementos hijos utilizando el operador de anidación <code>></code> en Emmet. Esto permite generar estructuras HTML jerárquicas de forma rápida y eficiente.</p>
+            </div>
+
+            <div class="emmet-example">
+                <h3>Ejemplo práctico con Emmet</h3>
+                <p>Si escribes la siguiente abreviatura en tu editor y presionas <code>Tab</code>:</p>
+                <div class="code-box">
+                    div>ul>li
+                </div>
+                <p>Emmet generará automáticamente el siguiente código HTML anidado:</p>
+                <div class="code-box" style="color: #66d9ef;">
+                    &lt;div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;/li&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &lt;/div&gt;
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

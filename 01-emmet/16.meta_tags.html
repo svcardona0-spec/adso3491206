@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02-Sibling - Emmet</title>
+    <title>16-Meta Tags - Emmet</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
@@ -60,7 +60,7 @@
             font-size: 1.05rem;
         }
 
-        /* Estilos específicos para la demostración de hermanos */
+        /* Estilos específicos para la demostración de etiquetas meta */
         .emmet-example {
             background-color: #ffffff;
             color: #2c3e50;
@@ -100,24 +100,24 @@
 
     <main>
         <section class="demo-container">
-            <h1>02-Sibling (Elementos Hermanos)</h1>
+            <h1>16-Meta Tags (Etiquetas Meta)</h1>
             
             <div class="description">
-                <p><strong>Objetivo:</strong> Aprender a colocar elementos al mismo nivel jerárquico (hermanos) utilizando el operador de adición <code>+</code> en Emmet.</p>
+                <p><strong>Objetivo:</strong> Aprender a generar etiquetas meta específicas de configuración de documentos (como codificación de caracteres o compatibilidad con Internet Explorer) utilizando abreviaturas rápidas en Emmet dentro de la sección <code>&lt;head&gt;</code>.</p>
             </div>
 
             <div class="emmet-example">
                 <h3>Ejemplo práctico con Emmet</h3>
-                <p>Si escribes la siguiente abreviatura en tu editor y presionas <code>Tab</code>:</p>
+                <p>Si escribes la siguiente abreviatura en tu editor dentro del head y presionas <code>Tab</code>:</p>
                 <div class="code-box">
-                    div+p+bq
+                    meta:compat
                 </div>
-                <p>Emmet generará automáticamente tres elementos hermanos en el mismo nivel:</p>
+                <p>Emmet generará automáticamente la etiqueta meta de compatibilidad con navegadores antiguos:</p>
                 <div class="code-box" style="color: #66d9ef;">
-                    &lt;div&gt;&lt;/div&gt;<br>
-                    &lt;p&gt;&lt;/p&gt;<br>
-                    &lt;blockquote&gt;&lt;/blockquote&gt;
+                    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
                 </div>
+
+                <p style="margin-top: 20px;">Otras abreviaturas útiles para meta tags incluyen <code>meta:vp</code> (viewport) y <code>meta:utf</code> (codificación).</p>
             </div>
         </section>
     </main>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02-Sibling - Emmet</title>
+    <title>06-Id - Emmet</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
@@ -60,7 +60,7 @@
             font-size: 1.05rem;
         }
 
-        /* Estilos específicos para la demostración de hermanos */
+        /* Estilos específicos para la demostración de ID */
         .emmet-example {
             background-color: #ffffff;
             color: #2c3e50;
@@ -100,23 +100,26 @@
 
     <main>
         <section class="demo-container">
-            <h1>02-Sibling (Elementos Hermanos)</h1>
+            <h1>06-Id (Atributo de Identificación)</h1>
             
             <div class="description">
-                <p><strong>Objetivo:</strong> Aprender a colocar elementos al mismo nivel jerárquico (hermanos) utilizando el operador de adición <code>+</code> en Emmet.</p>
+                <p><strong>Objetivo:</strong> Aprender a asignar un atributo de ID único utilizando el operador numeral <code>#</code> en Emmet. Al igual que con las clases, si no especificas una etiqueta, Emmet asumirá por defecto un elemento <code>&lt;div&gt;</code>.</p>
             </div>
 
             <div class="emmet-example">
                 <h3>Ejemplo práctico con Emmet</h3>
                 <p>Si escribes la siguiente abreviatura en tu editor y presionas <code>Tab</code>:</p>
                 <div class="code-box">
-                    div+p+bq
+                    #header
                 </div>
-                <p>Emmet generará automáticamente tres elementos hermanos en el mismo nivel:</p>
+                <p>Emmet generará automáticamente un div con ese ID:</p>
                 <div class="code-box" style="color: #66d9ef;">
-                    &lt;div&gt;&lt;/div&gt;<br>
-                    &lt;p&gt;&lt;/p&gt;<br>
-                    &lt;blockquote&gt;&lt;/blockquote&gt;
+                    &lt;div id="header"&gt;&lt;/div&gt;
+                </div>
+
+                <p style="margin-top: 20px;">También puedes combinarlo con etiquetas específicas (por ejemplo, <code>form#login-form</code>):</p>
+                <div class="code-box" style="color: #66d9ef;">
+                    &lt;form id="login-form"&gt;&lt;/form&gt;
                 </div>
             </div>
         </section>
