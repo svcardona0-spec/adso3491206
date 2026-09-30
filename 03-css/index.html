@@ -6,7 +6,7 @@
     <title>CSS Learning Guide - 45 Topics</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
-        /* Contenedor del menú en dos columnas y centrado */
+       
         ul.menu {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -17,7 +17,7 @@
             list-style: none;
         }
 
-        /* Estilo de cada tarjeta / botón */
+   
         ul.menu li {
             background: #ffffff;
             border-radius: 50px;
@@ -32,7 +32,7 @@
             transform: translateY(-2px);
         }
 
-        /* Enlace que ocupa toda la tarjeta */
+      
         ul.menu li a {
             display: flex;
             align-items: center;
@@ -45,7 +45,7 @@
             font-size: 1.1rem;
         }
 
-        /* Círculo azul con el número */
+      
         ul.menu li a::before {
             content: attr(data-num);
             display: flex;
@@ -61,7 +61,7 @@
             flex-shrink: 0;
         }
 
-        /* Responsive para pantallas pequeñas */
+
         @media (max-width: 768px) {
             ul.menu {
                 grid-template-columns: 1fr;
@@ -79,7 +79,7 @@
         <header class="mainmenu">
             <h1>CSS</h1>
             <img src="../src/imgs/logo-css.png" alt="Profile">
-            <p>Is the language we use to style a Web page.</p>
+            <p>Lenguaje que usamos para la p.</p>
         </header>
         <ul class="menu">
             <li><a href="01-document-style.html" data-num="01" target="_blank" rel="noopener noreferrer">01-document-style</a></li>

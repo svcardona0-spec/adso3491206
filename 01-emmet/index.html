@@ -1,186 +1,96 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmet Curriculum - ADSO</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #1a1a1a;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            padding: 20px;
-        }
-
-        /* Botón de retorno al menú principal general */
-        .back {
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .back a svg {
-            fill: #ffffff;
-            transition: transform 0.2s ease;
-        }
-
-        .back a svg:hover {
-            transform: scale(1.1);
-        }
-
-        .header-title {
-            text-align: center;
-            color: #ffffff;
-            margin-bottom: 30px;
-        }
-
-        .header-title h1 {
-            color: #b19cd9;
-            margin-bottom: 5px;
-        }
-
-        /* Contenedor principal con diseño de dos columnas de botones */
-        .menu-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        /* Estilo de cada botón individual */
-        .menu-btn {
-            display: flex;
-            align-items: center;
-            background-color: #ffffff;
-            color: #2c3e50;
-            width: 48%;
-            min-width: 320px;
-            padding: 12px 20px;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .menu-btn:hover {
-            transform: translateY(-3px);
-            background-color: #f0f0f0;
-        }
-
-        /* Círculo numerado del botón */
-        .btn-number {
-            background-color: #663399; /* Violeta CSS */
-            color: #ffffff;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        /* Texto descriptivo del botón */
-        .btn-text {
-            font-weight: bold;
-            font-size: 1rem;
-            color: #333333;
-        }
-    </style>
+    <title>02-Html</title>
+    <link rel="stylesheet" href="../src/css/styles.css">
+    
 </head>
-<body>
-    <!-- Enlace para volver al inicio general del proyecto -->
+
+<body class ="html">
     <nav class="back">
-        <a href="../index.html" title="Volver al inicio principal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                <path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-            </svg>
+        <a href="../index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
         </a>
     </nav>
+    <main>
+        <header class="mainmenu">
+            <h1>01-Emmet</h1>
+            <img src="../src/imgs/logo-emmet.svg" alt="Profile">
+            <h3>Lenguaje de marcado que estructura las páginas web.</h3>
+        </header>
 
-    <div class="header-title">
-        <h1>Módulo 01: Emmet</h1>
-        <p>Workflow - Markup & Styling</p>
-    </div>
-
-    <!-- Menú de opciones basado en la estructura de la carpeta 01-emmet -->
-    <div class="menu-container">
+    <menu class="mainmenu ">
         <a href="01.child.html" class="menu-btn">
-            <div class="btn-number">01</div>
-            <div class="btn-text">01-child</div>
+           <span>01</span>
+            <aside>child</aside>
         </a>
+
         <a href="02.sibling.html" class="menu-btn">
-            <div class="btn-number">02</div>
-            <div class="btn-text">02-sibling</div>
+            <span>02</span>
+            <aside>sibling</aside>
         </a>
         <a href="03.multiplication.html" class="menu-btn">
-            <div class="btn-number">03</div>
-            <div class="btn-text">03-multiplication</div>
+            <span>03</span>
+            <aside>multiplication</aside>
         </a>
         <a href="04.class.html" class="menu-btn">
-            <div class="btn-number">04</div>
-            <div class="btn-text">04-class</div>
+            <span>04</span>
+            <aside>class</aside>
         </a>
         <a href="05.classes.html" class="menu-btn">
-            <div class="btn-number">05</div>
-            <div class="btn-text">05-classes</div>
+            <span>05</span>
+            <aside>classes</aside>
         </a>
         <a href="06.Id.html" class="menu-btn">
-            <div class="btn-number">06</div>
-            <div class="btn-text">06-Id</div>
+            <span>06</span>
+            <aside>Id</aside>
         </a>
         <a href="07.text.html" class="menu-btn">
-            <div class="btn-number">07</div>
-            <div class="btn-text">07-text</div>
+            <span>07</span>
+            <aside>text</aside>
         </a>
         <a href="08.custom_attribute.html" class="menu-btn">
-            <div class="btn-number">08</div>
-            <div class="btn-text">08-custom_attribute</div>
+            <span>08</span>
+            <aside>custom_attribute</aside>
         </a>
         <a href="09.item_numbering.html" class="menu-btn">
-            <div class="btn-number">09</div>
-            <div class="btn-text">09-item_numbering</div>
+            <span>09</span>
+            <aside>item_numbering</aside>
         </a>
         <a href="10.reverse_numbering.html" class="menu-btn">
-            <div class="btn-number">10</div>
-            <div class="btn-text">10-reverse_numbering</div>
+            <span>10</span>
+            <aside>reverse_numbering</aside>
         </a>
         <a href="11.base_numbering.html" class="menu-btn">
-            <div class="btn-number">11</div>
-            <div class="btn-text">11-base_numbering</div>
+            <span>11</span>
+            <aside>base_numbering</aside>
         </a>
         <a href="12.climb_up.html" class="menu-btn">
-            <div class="btn-number">12</div>
-            <div class="btn-text">12-climb_up</div>
+            <span>12</span>
+            <aside>climb_up</aside>
         </a>
         <a href="13.grouping.html" class="menu-btn">
-            <div class="btn-number">13</div>
-            <div class="btn-text">13-grouping</div>
+            <span>13</span>
+            <aside>grouping</aside>
         </a>
         <a href="14.lorem.html" class="menu-btn">
-            <div class="btn-number">14</div>
-            <div class="btn-text">14-lorem</div>
+            <span>14</span>
+            <aside>lorem</aside>
         </a>
         <a href="15.HTML_documents.html" class="menu-btn">
-            <div class="btn-number">15</div>
-            <div class="btn-text">15-HTML_documents</div>
+            <span>15</span>
+            <aside>HTML_documents</aside>
         </a>
         <a href="16.meta_tags.html" class="menu-btn">
-            <div class="btn-number">16</div>
-            <div class="btn-text">16-meta_tags</div>
+            <span>16</span>
+            <aside>meta_tags</aside>
         </a>
         <a href="17.challenge.html" class="menu-btn">
-            <div class="btn-number">17</div>
-            <div class="btn-text">17-challenge</div>
+            <span>17</span>
+            <aside>challenge</aside>
         </a>
-    </div>
+    </menu>
 </body>
 </html>
