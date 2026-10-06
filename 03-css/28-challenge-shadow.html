@@ -1,115 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>28-challenge-shadow</title>
+    <title>28-Challenge - Pixel Art Drácula</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
-        * {
-            box-sizing: border-box;
+        body.html {
+            background: linear-gradient(135deg, #0b4f71 0%, #1a759f 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mainmenu.internal {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mainmenu.internal h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            margin: 10px 0;
+        }
+
+        .module-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .mainmenu.internal h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 5px;
+            color: #e0fbfc;
         }
 
         .demo-container {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            padding: 1.5rem;
-            margin: 1.5rem auto;
-            max-width: 850px;
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .demo-container h3 {
-            color: #f1c40f;
-            margin-top: 0;
-            border-bottom: 2px solid #f1c40f;
-            padding-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .demo-container > p {
-            text-align: center;
-            color: #ecf0f1;
-        }
-
-        .pixel-art-stage {
             display: flex;
             justify-content: center;
-            align-items: center;
-            background: radial-gradient(circle, #2c3e50 0%, #111 100%);
-            border-radius: 8px;
-            padding: 3rem 1rem;
-            margin-top: 1.5rem;
-            min-height: 280px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+            margin-top: 10px;
         }
 
-        /* Batman Pixel Art con box-shadow */
-        .batman-pixel {
+        .pixel-art-wrapper {
+            background-color: #1b263b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 2px solid #415a77;
+        }
+
+        .pixel-canvas-container {
+            width: 340px;
+            height: 420px;
             position: relative;
-            width: 8px;
-            height: 8px;
-            background: #000;
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Posicionamiento ajustado para que todo el gráfico quede perfectamente centrado y visible */
+        .div.dracula {
+            width: 10px;
+            height: 10px;
+            background: transparent;
+            position: absolute;
+            top: 80px;
+            left: 70px;
             box-shadow: 
-                /* Orejas y cabeza superior */
-                -24px -32px 0 0 #000, -16px -32px 0 0 #000, 16px -32px 0 0 #000, 24px -32px 0 0 #000,
-                -32px -24px 0 0 #000, -24px -24px 0 0 #000, -16px -24px 0 0 #000, -8px -24px 0 0 #000, 0px -24px 0 0 #000, 8px -24px 0 0 #000, 16px -24px 0 0 #000, 24px -24px 0 0 #000, 32px -24px 0 0 #000,
-                /* Extensión de alas */
-                -40px -16px 0 0 #000, -32px -16px 0 0 #000, -24px -16px 0 0 #000, -16px -16px 0 0 #000, -8px -16px 0 0 #000, 0px -16px 0 0 #000, 8px -16px 0 0 #000, 16px -16px 0 0 #000, 24px -16px 0 0 #000, 32px -16px 0 0 #000, 40px -16px 0 0 #000,
-                -48px -8px 0 0 #000, -40px -8px 0 0 #000, -32px -8px 0 0 #000, -24px -8px 0 0 #000, -16px -8px 0 0 #000, -8px -8px 0 0 #000, 0px -8px 0 0 #000, 8px -8px 0 0 #000, 16px -8px 0 0 #000, 24px -8px 0 0 #000, 32px -8px 0 0 #000, 40px -8px 0 0 #000, 48px -8px 0 0 #000,
-                /* Base inferior del murciélago */
-                -32px 0px 0 0 #000, -24px 0px 0 0 #000, -16px 0px 0 0 #000, -8px 0px 0 0 #000, 0px 0px 0 0 #000, 8px 0px 0 0 #000, 16px 0px 0 0 #000, 24px 0px 0 0 #000, 32px 0px 0 0 #000,
-                -16px 8px 0 0 #000, -8px 8px 0 0 #000, 0px 8px 0 0 #000, 8px 8px 0 0 #000, 16px 8px 0 0 #000,
-                0px 16px 0 0 #000;
-            transform: scale(2); /* Amplía la escala del pixel art */
-        }
+                /* === MURCIÉLAGO IZQUIERDA === */
+                -60px -30px 0 #000000, -40px -30px 0 #000000, -20px -30px 0 #000000, -10px -30px 0 #000000, 0px -30px 0 #000000, 20px -30px 0 #000000, 40px -30px 0 #000000,
+                -50px -20px 0 #000000, -30px -20px 0 #000000, -20px -20px 0 #000000, 0px -20px 0 #000000, 10px -20px 0 #000000, 30px -20px 0 #000000,
+                -20px -10px 0 #000000, 0px -10px 0 #000000,
 
-        .property-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-        }
+                /* === MURCIÉLAGO CENTRO-ARRIBA === */
+                80px -40px 0 #000000, 90px -40px 0 #000000, 110px -40px 0 #000000, 120px -40px 0 #000000,
+                70px -30px 0 #000000, 90px -30px 0 #000000, 100px -30px 0 #000000, 110px -30px 0 #000000, 130px -30px 0 #000000,
+                90px -20px 0 #000000, 100px -20px 0 #000000, 110px -20px 0 #000000,
+                100px -10px 0 #000000,
 
-        .property-list li {
-            background: #252525;
-            margin-bottom: 0.5rem;
-            padding: 0.75rem 1rem;
-            border-left: 4px solid #f1c40f;
-            border-radius: 4px;
-            font-family: monospace;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            color: #ecf0f1;
+                /* === MURCIÉLAGO DERECHA === */
+                160px -20px 0 #000000, 170px -20px 0 #000000, 180px -20px 0 #000000, 190px -20px 0 #000000, 210px -20px 0 #000000, 220px -20px 0 #000000, 230px -20px 0 #000000, 240px -20px 0 #000000,
+                170px -10px 0 #000000, 190px -10px 0 #000000, 200px -10px 0 #000000, 220px -10px 0 #000000,
+                200px 0px 0 #000000,
+
+                /* === CABELLO DRÁCULA (PARTE SUPERIOR) === */
+                50px 10px 0 #000000, 60px 10px 0 #000000, 70px 10px 0 #000000, 80px 10px 0 #000000, 90px 10px 0 #000000, 100px 10px 0 #000000, 110px 10px 0 #000000, 120px 10px 0 #000000,
+                40px 20px 0 #000000, 50px 20px 0 #000000, 60px 20px 0 #000000, 70px 20px 0 #000000, 80px 20px 0 #000000, 90px 20px 0 #000000, 100px 20px 0 #000000, 110px 20px 0 #000000, 120px 20px 0 #000000, 130px 20px 0 #000000,
+                30px 30px 0 #000000, 40px 30px 0 #000000, 50px 30px 0 #000000, 60px 30px 0 #000000, 70px 30px 0 #000000, 80px 30px 0 #000000, 90px 30px 0 #000000, 100px 30px 0 #000000, 110px 30px 0 #000000, 120px 30px 0 #000000, 130px 30px 0 #000000, 140px 30px 0 #000000,
+                20px 40px 0 #000000, 30px 40px 0 #000000, 40px 40px 0 #000000, 50px 40px 0 #ffffff, 60px 40px 0 #ffffff, 70px 40px 0 #000000, 80px 40px 0 #000000, 90px 40px 0 #000000, 100px 40px 0 #ffffff, 110px 40px 0 #ffffff, 120px 40px 0 #000000, 130px 40px 0 #000000, 140px 40px 0 #000000, 150px 40px 0 #000000,
+
+                /* === OREJAS Y ROSTRO === */
+                20px 50px 0 #000000, 30px 50px 0 #ffffff, 40px 50px 0 #ffffff, 50px 50px 0 #ffffff, 60px 50px 0 #ffffff, 70px 50px 0 #ffffff, 80px 50px 0 #ffffff, 90px 50px 0 #ffffff, 100px 50px 0 #ffffff, 110px 50px 0 #ffffff, 120px 50px 0 #ffffff, 130px 50px 0 #ffffff, 140px 50px 0 #ffffff, 150px 50px 0 #000000,
+                20px 60px 0 #000000, 30px 60px 0 #ffffff, 40px 60px 0 #ffffff, 50px 60px 0 #ffffff, 60px 60px 0 #ffffff, 70px 60px 0 #000000, 80px 60px 0 #ffffff, 90px 60px 0 #ffffff, 100px 60px 0 #000000, 110px 60px 0 #ffffff, 120px 60px 0 #ffffff, 130px 60px 0 #ffffff, 140px 60px 0 #ffffff, 150px 60px 0 #000000,
+                20px 70px 0 #000000, 30px 70px 0 #ffffff, 40px 70px 0 #ffffff, 50px 70px 0 #ffffff, 60px 70px 0 #ffffff, 70px 70px 0 #ffffff, 80px 70px 0 #ffffff, 90px 70px 0 #ffffff, 100px 70px 0 #ffffff, 110px 70px 0 #ffffff, 120px 70px 0 #ffffff, 130px 70px 0 #ffffff, 140px 70px 0 #ffffff, 150px 70px 0 #000000,
+                30px 80px 0 #000000, 40px 80px 0 #ffffff, 50px 80px 0 #ffffff, 60px 80px 0 #ffffff, 70px 80px 0 #ffffff, 80px 80px 0 #ffffff, 90px 80px 0 #ffffff, 100px 80px 0 #ffffff, 110px 80px 0 #ffffff, 120px 80px 0 #ffffff, 130px 80px 0 #ffffff, 140px 80px 0 #000000,
+
+                /* === CUELLO ALTO Y CAPA ROJA === */
+                20px 90px 0 #000000, 30px 90px 0 #d92b2b, 40px 90px 0 #d92b2b, 50px 90px 0 #ffffff, 60px 90px 0 #ffffff, 70px 90px 0 #ffffff, 80px 90px 0 #ffffff, 90px 90px 0 #ffffff, 100px 90px 0 #ffffff, 110px 90px 0 #ffffff, 120px 90px 0 #ffffff, 130px 90px 0 #d92b2b, 140px 90px 0 #d92b2b, 150px 90px 0 #000000,
+                10px 100px 0 #000000, 20px 100px 0 #d92b2b, 30px 100px 0 #d92b2b, 40px 100px 0 #d92b2b, 50px 100px 0 #d92b2b, 60px 100px 0 #000000, 70px 100px 0 #000000, 80px 100px 0 #ffffff, 90px 100px 0 #ffffff, 100px 100px 0 #000000, 110px 100px 0 #d92b2b, 120px 100px 0 #d92b2b, 130px 100px 0 #d92b2b, 140px 100px 0 #000000,
+
+                /* === CUERPO, TRAJE Y MANOS === */
+                10px 110px 0 #000000, 20px 110px 0 #d92b2b, 30px 110px 0 #d92b2b, 40px 110px 0 #d92b2b, 50px 110px 0 #000000, 60px 110px 0 #000000, 70px 110px 0 #000000, 80px 110px 0 #000000, 90px 110px 0 #000000, 100px 110px 0 #000000, 110px 110px 0 #d92b2b, 120px 110px 0 #d92b2b, 130px 110px 0 #d92b2b, 140px 110px 0 #000000,
+                10px 120px 0 #000000, 20px 120px 0 #ffffff, 30px 120px 0 #d92b2b, 40px 120px 0 #d92b2b, 50px 120px 0 #000000, 60px 120px 0 #000000, 70px 120px 0 #000000, 80px 120px 0 #000000, 90px 120px 0 #000000, 100px 120px 0 #000000, 110px 120px 0 #d92b2b, 120px 120px 0 #d92b2b, 130px 120px 0 #ffffff, 140px 120px 0 #000000,
+                10px 130px 0 #000000, 20px 130px 0 #d92b2b, 30px 130px 0 #d92b2b, 40px 130px 0 #d92b2b, 50px 130px 0 #000000, 60px 130px 0 #000000, 70px 130px 0 #d92b2b, 80px 130px 0 #d92b2b, 90px 130px 0 #000000, 100px 130px 0 #000000, 110px 130px 0 #d92b2b, 120px 130px 0 #d92b2b, 130px 130px 0 #d92b2b, 140px 130px 0 #000000,
+                10px 140px 0 #000000, 20px 140px 0 #d92b2b, 30px 140px 0 #d92b2b, 40px 140px 0 #d92b2b, 50px 140px 0 #000000, 60px 140px 0 #000000, 70px 140px 0 #d92b2b, 80px 140px 0 #d92b2b, 90px 140px 0 #000000, 100px 140px 0 #000000, 110px 140px 0 #d92b2b, 120px 140px 0 #d92b2b, 130px 140px 0 #d92b2b, 140px 140px 0 #000000,
+                20px 150px 0 #000000, 30px 150px 0 #d92b2b, 40px 150px 0 #d92b2b, 50px 150px 0 #000000, 60px 150px 0 #000000, 70px 150px 0 #000000, 80px 150px 0 #000000, 90px 150px 0 #000000, 100px 150px 0 #000000, 110px 150px 0 #d92b2b, 120px 150px 0 #d92b2b, 130px 150px 0 #000000,
+
+                /* === BOTAS / PIERNAS === */
+                30px 160px 0 #000000, 40px 160px 0 #000000, 50px 160px 0 #000000, 90px 160px 0 #000000, 100px 160px 0 #000000, 110px 160px 0 #000000,
+                30px 170px 0 #000000, 40px 170px 0 #000000, 50px 170px 0 #000000, 90px 170px 0 #000000, 100px 170px 0 #000000, 110px 170px 0 #000000;
         }
     </style>
 </head>
-<body class="css">
-   <nav class="back">
-        <a href="index.html">
-           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
-        </a>
-    </nav>
-    <main>
+<body class="html">
+
+    <main class="container">
+        <!-- Encabezado del reto -->
         <header class="mainmenu internal">
-            <h1>28-challenge-shadow</h1>
-            <p>Pixel Art (Batman) using advanced box-shadow positioning.</p>
+            <h1>28-Challenge</h1>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-html.png" alt="Logo Challenge" class="module-logo">
+            </div>
+            <h3>Reto de Pixel Art: Drácula clásico con capa y cuello alto.</h3>
         </header>
 
+        <!-- Contenedor del lienzo con el diseño de Drácula y los murciélagos -->
         <section class="demo-container">
-            <h3>Reto de Pixel Art con Box Shadow</h3>
-            <p>Demostración práctica del potencial creativo de la propiedad <code>box-shadow</code> para construir gráficos vectoriales pixelados complejos en una sola etiqueta HTML.</p>
-
-            <div class="pixel-art-stage">
-                <div class="batman-pixel"></div>
+            <div class="pixel-art-wrapper">
+                <div class="pixel-canvas-container">
+                    <div class="div dracula"></div>
+                </div>
             </div>
-
-            <ul class="property-list">
-                <li><strong>Múltiples Sombras:</strong> Permite encadenar decenas de coordenadas (X, Y) con un radio de difuminado de 0 para crear píxeles sólidos.</li>
-                <li><strong>Optimización Gráfica:</strong> Renderiza una ilustración completa sin necesidad de archivos externos PNG o SVG.</li>
-                <li><strong>Escalabilidad:</strong> Se puede manipular el tamaño mediante transformaciones CSS manteniendo nítidos los bordes de cada píxel.</li>
-            </ul>
         </section>
     </main>
+
 </body>
 </html>
