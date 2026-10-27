@@ -1,29 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>03-attr-style</title>
+    <!-- Estilos generales de la plataforma -->
     <link rel="stylesheet" href="../src/css/styles.css">
-</head> 
-<body class="css">
-    <nav class ="back">
-        <a href="index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+</head>
+<body class="html">
+
+    <!-- Botón de navegación para regresar -->
+    <nav class="back">
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main> 
+
+    <main class="container">
+        <!-- Encabezado con título, logo y descripción del reto -->
         <header class="mainmenu internal">
             <h1>03-attr-style</h1>
-            <img src="../src/imgs/logo-css.png" alt="Css">
-            <h3> This way we can include CSS within the style attribute in the html tag, it is the least recommended way.  </h3>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-css.png" alt="Logo Challenge" class="module-logo">
+            </div>
+            <h3>Inline CSS applied directly via the style attribute. Ejemplo: Bandera de Francia.</h3>
         </header>
-        <section>
-            <h2 class="subtitle">France Flag:</h2>
-            <div class="flag france" style="align-items: center; display: flex; justify-content: center; height: 180px; margin: 1rem auto;
-            width: 280px; background: linear-gradient(to right, #0055a4 33%,
-            #fff 13%, #fff 68%, #ed2939 20%);"></div>
-        </section>
-        </menu>
+
+        <!-- Contenedor principal con estilos en línea (Inline CSS) -->
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; width: 100%; margin-top: 20px;">
+            
+            <!-- Tarjeta contenedora con estilos en línea -->
+            <div style="background-color: #1b263b; padding: 20px; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.4); border: 2px solid #415a77; display: flex; flex-direction: column; align-items: center;">
+                
+                <!-- Título -->
+                <span style="font-size: 1.1rem; margin-bottom: 12px; color: #e0fbfc; font-weight: 600;">Francia</span>
+                
+                <!-- Bandera de Francia usando exclusivamente atributo style (Inline CSS) -->
+                <div style="width: 260px; height: 170px; display: flex; flex-direction: row; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); overflow: hidden; border: 1px solid #ccc;">
+                    
+                    <!-- Franja Azul -->
+                    <div style="background-color: #002395; flex: 1;"></div>
+                    
+                    <!-- Franja Blanca -->
+                    <div style="background-color: #ffffff; flex: 1;"></div>
+                    
+                    <!-- Franja Roja -->
+                    <div style="background-color: #ed2939; flex: 1;"></div>
+                    
+                </div>
+            </div>
+
+        </div>
     </main>
+
 </body>
+</html>

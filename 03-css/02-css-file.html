@@ -1,28 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>02-css-file</title>
+    <!-- 1. Estilos generales de la plataforma -->
     <link rel="stylesheet" href="../src/css/styles.css">
-    <link rel="stylesheet" href="..src/css/flag.css">
-</head> 
-<body class="css">
-    <nav class ="back">
-        <a href="index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+    <!-- 2. Tus estilos de banderas -->
+    <link rel="stylesheet" href="flag/flag.css">
+</head>
+<body class="html">
+
+    <!-- Botón de navegación para regresar -->
+    <nav class="back">
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main> 
+
+    <main class="container">
+        <!-- Encabezado con título, logo y descripción del reto -->
         <header class="mainmenu internal">
             <h1>02-css-file</h1>
-            <img src="../src/imgs/logo-css.png" alt="Css">
-            <h3>This way we can include the CSS of an external file, it is highly recommended when you have many html pages.</h3>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-css.png" alt="Logo Challenge" class="module-logo">
+            </div>
+            <h3>External CSS linked via the &lt;link&gt; tag. Ejemplo: Banderas de Colombia y Japón.</h3>
         </header>
-        <section>
-            <h2 class="subtitle">Japan Flag</h2>
-            <div class="flag japan"></div>
-        </section>
-        </menu>
+
+        <!-- Contenedor general que fuerza la alineación horizontal y el centrado total en pantalla -->
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 30px; width: 100%; margin-top: 20px; flex-wrap: wrap;">
+            
+            <!-- Bandera de Colombia -->
+            <div class="flag-box">
+                <span class="flag-title">Colombia</span>
+                <div class="flag col-flag">
+                    <div class="col-yellow"></div>
+                    <div class="col-blue"></div>
+                    <div class="col-red"></div>
+                </div>
+            </div>
+
+            <!-- Bandera de Japón -->
+            <div class="flag-box">
+                <span class="flag-title">Japón</span>
+                <div class="flag jap-flag">
+                    <div class="jap-sun"></div>
+                </div>
+            </div>
+
+        </div>
     </main>
+
 </body>
+</html>

@@ -1,42 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01-document-style</title>
+    <title>01-document-style - CSS Interno</title>
+    <!-- Dependencia de estilos generales de la plataforma -->
     <link rel="stylesheet" href="../src/css/styles.css">
+    
+    <!-- CSS Interno dentro de la etiqueta style (útil para documentos de una sola página) -->
     <style>
-        div.flag{
+        body.html {
+            background: linear-gradient(135deg, #0b4f71 0%, #1a759f 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mainmenu.internal {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .mainmenu.internal h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            margin: 10px 0;
+        }
+
+        .module-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .mainmenu.internal h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-top: 5px;
+            color: #e0fbfc;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        .demo-container {
+            width: 100%;
             display: flex;
             justify-content: center;
-            height: 200px;
-            margin: 1rem auto;
-            width: 280px;
-            &.colombia{
-                background: linear-gradient(to bottom, #ffdd00 50%, #003087 50%, #003087 75%, #c8102e 75%);
-                
-                
-            }
+            margin-top: 10px;
+        }
+
+        .pixel-art-wrapper {
+            background-color: #1b263b;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 2px solid #415a77;
+        }
+
+        /* Contenedor principal de la Bandera de Colombia */
+        .colombia-flag {
+            width: 360px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        /* Franja Amarilla (ocupa el 50% superior) */
+        .flag-yellow {
+            background-color: #fcd116;
+            flex: 2; /* El amarillo es el doble de altura que las otras dos franjas */
+        }
+
+        /* Franja Azul (ocupa el 25% central) */
+        .flag-blue {
+            background-color: #003893;
+            flex: 1;
+        }
+
+        /* Franja Roja (ocupa el 25% inferior) */
+        .flag-red {
+            background-color: #ce1126;
+            flex: 1;
         }
     </style>
-</head> 
-<body class="css">
-    <nav class ="back">
-        <a href="index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+</head>
+<body class="html">
+
+    <!-- Botón de navegación para regresar al menú -->
+    <nav class="back">
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main> 
+
+    <main class="container">
+        <!-- Encabezado con título, logo y descripción del ejercicio -->
         <header class="mainmenu internal">
             <h1>01-document-style</h1>
-            <img src="../src/imgs/logo-css.png" alt="Css">
-            <h3>This way we can include CSS within the style tag, it is very useful when you only have an html document. </h3>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-css.png" alt="Logo CSS" class="module-logo">
+            </div>
+            <h3>CSS interno definido dentro de la etiqueta &lt;style&gt; en el &lt;head&gt; del HTML (Ejemplo: Bandera de Colombia).</h3>
         </header>
-        <section>
-            <h2 class="subtitle">Colombia flag:</h2>
-            <div class="flag colombia"></div>
+
+        <!-- Contenedor del ejemplo visual -->
+        <section class="demo-container">
+            <div class="pixel-art-wrapper">
+                <div class="colombia-flag">
+                    <div class="flag-yellow"></div>
+                    <div class="flag-blue"></div>
+                    <div class="flag-red"></div>
+                </div>
+            </div>
         </section>
-        </menu>
     </main>
+
 </body>
+</html>

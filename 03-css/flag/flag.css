@@ -1,0 +1,77 @@
+/* Contenedor externo que alinea y centra las banderas lado a lado */
+.flags-wrapper-external {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 30px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+/* Estilos de la tarjeta contenedora de cada bandera */
+.flag-box {
+    background-color: #1b263b;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    border: 2px solid #415a77;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título de cada bandera */
+.flag-title {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #e0fbfc;
+    font-weight: 600;
+}
+
+/* Dimensiones base de la bandera */
+.flag {
+    width: 260px;
+    height: 170px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+/* Bandera de Colombia */
+.col-flag {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-yellow {
+    background-color: #fcd116;
+    flex: 2;
+}
+
+.col-blue {
+    background-color: #003893;
+    flex: 1;
+}
+
+.col-red {
+    background-color: #ce1126;
+    flex: 1;
+}
+
+/* Bandera de Japón */
+.jap-flag {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jap-sun {
+    width: 68px;
+    height: 68px;
+    background-color: #bc002d;
+    border-radius: 50%;
+}

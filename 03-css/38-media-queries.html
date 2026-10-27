@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>38-media-queries</title>
+    <title>38-media-queries - Pepsi Responsive</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
@@ -11,67 +11,103 @@
         }
 
         .demo-container {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background-color: #0b1d3a;
+            border: 1px solid #1a365d;
             padding: 1.5rem;
             margin: 1.5rem auto;
             max-width: 850px;
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
 
         .demo-container h3 {
-            color: #2c3e50;
+            color: #63b3ed;
             margin-top: 0;
-            border-bottom: 2px solid #16a085;
+            border-bottom: 2px solid #e53e3e;
             padding-bottom: 0.5rem;
             text-align: center;
         }
 
         .demo-container > p {
             text-align: center;
-            color: #2c3e50;
+            color: #e2e8f0;
         }
 
-        .mq-card {
-            background-color: #ffffff;
-            border: 1px solid #dcdde1;
-            padding: 1.5rem;
+        /* Tarjeta contenedora adaptable con Media Queries */
+        .responsive-pepsi-card {
+            background-color: #102a43;
+            border: 2px solid #243b53;
+            padding: 2rem;
             text-align: center;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             margin-top: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            transition: all 0.4s ease-in-out;
         }
 
-        /* Indicador visual dinámico según el ancho de pantalla */
-        .mq-indicator {
-            padding: 1rem;
-            border-radius: 6px;
-            color: white;
-            background-color: #e74c3c;
+        .pepsi-responsive-img {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            padding: 8px;
+            background: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 102, 204, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        /* Indicador dinámico por defecto (Móvil / Pantalla Pequeña) */
+        .mq-status {
             font-size: 1.1rem;
-            transition: background-color 0.3s ease;
+            font-weight: bold;
+            color: #ff6b6b;
+            padding: 0.75rem 1rem;
+            background-color: rgba(255, 107, 107, 0.15);
+            border: 1px dashed #ff6b6b;
+            border-radius: 6px;
+            margin-top: 1rem;
         }
 
-        /* Media Queries para diferentes tamaños de pantalla */
+        .mq-status::after {
+            content: " (Vista Móvil < 600px)";
+        }
+
+        /* ==========================================================
+           MEDIA QUERIES (Puntos de quiebre responsivos)
+           ========================================================== */
+
+        /* Para pantallas medianas (Tablets >= 600px) */
         @media (min-width: 600px) {
-            .mq-indicator {
-                background-color: #f39c12;
+            .responsive-pepsi-card {
+                background-color: #1a365d;
+                border-color: #3182ce;
             }
-            .mq-indicator::after {
-                content: " (Pantalla mediana >= 600px)";
+            .mq-status {
+                color: #f6ad55;
+                background-color: rgba(246, 173, 85, 0.15);
+                border-color: #f6ad55;
+            }
+            .mq-status::after {
+                content: " (Vista Tablet: 600px - 899px)";
             }
         }
 
+        /* Para pantallas grandes (Escritorio >= 900px) */
         @media (min-width: 900px) {
-            .mq-indicator {
-                background-color: #27ae60;
+            .responsive-pepsi-card {
+                background-color: #0f2942;
+                border-color: #e53e3e;
+                padding: 2.5rem;
             }
-            .mq-indicator::after {
-                content: " (Pantalla grande >= 900px)";
+            .mq-status {
+                color: #68d391;
+                background-color: rgba(104, 211, 145, 0.15);
+                border-color: #68d391;
+            }
+            .mq-status::after {
+                content: " (Vista Escritorio >= 900px)";
             }
         }
 
@@ -82,46 +118,61 @@
         }
 
         .property-list li {
-            background: #ffffff;
+            background: #102a43;
             margin-bottom: 0.5rem;
             padding: 0.75rem 1rem;
-            border-left: 4px solid #16a085;
-            border-radius: 4px;
+            border-left: 4px solid #e53e3e;
+            border-radius: 6px;
             font-family: monospace;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            color: #2c3e50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: #e2e8f0;
         }
     </style>
 </head>
-<body class="css">
+<body class="html">
+
+    <!-- Botón de navegación para regresar -->
     <nav class="back">
-        <a href="index.html">
-           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main>
+
+    <main class="container">
+        <!-- Encabezado institucional -->
         <header class="mainmenu internal">
             <h1>38-media-queries</h1>
-            <p>Diseño Web Responsivo mediante reglas condicionales según el dispositivo.</p>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-css.png" alt="Logo CSS" class="module-logo">
+            </div>
+            <h3>Diseño Web Adaptativo con Reglas @media (Temática Pepsi)</h3>
         </header>
 
+        <!-- Contenedor del reto -->
         <section class="demo-container">
-            <h3>Media Queries (@media)</h3>
-            <p>Permiten aplicar bloques de estilos CSS específicos dependiendo de las características del dispositivo, como el ancho de la pantalla, la resolución o la orientación.</p>
+            <h3>Adaptabilidad Responsiva con Media Queries</h3>
+            <p>Redimensiona el ancho de tu navegador para comprobar cómo cambian los colores, los bordes y el estado visual del diseño de forma automática según la resolución.</p>
 
-            <div class="mq-card">
-                <div class="mq-indicator">
-                    Cambia el tamaño de tu ventana para probar el diseño responsivo
+            <div class="responsive-pepsi-card">
+                <!-- Imagen corporativa de Pepsi -->
+                <img src="../src/imgs/pepsi02.png" alt="Logo Pepsi" class="pepsi-responsive-img">
+                <h4 style="color: #ffffff; margin: 0.5rem 0; font-size: 1.3rem;">Pepsi Responsive Design</h4>
+                <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1rem;">Las reglas condicionales ajustan el estilo visual del componente en tiempo real.</p>
+                
+                <div class="mq-status">
+                    Estado actual del Viewport:
                 </div>
             </div>
 
             <ul class="property-list">
-                <li><strong>@media (min-width: px):</strong> Aplica reglas CSS cuando la pantalla es mayor o igual al valor especificado.</li>
-                <li><strong>@media (max-width: px):</strong> Aplica estilos cuando la ventana es menor o igual al límite indicado.</li>
-                <li><strong>orientation:</strong> Permite adaptar el diseño si el dispositivo está en modo vertical (portrait) u horizontal (landscape).</li>
-                <li><strong>Uso en Diseño Web:</strong> Pilar fundamental del enfoque <em>Mobile First</em> y el desarrollo web responsivo moderno.</li>
+                <li><strong>@media (min-width: px):</strong> Aplica bloques de estilos personalizados cuando la pantalla alcanza o supera el ancho especificado.</li>
+                <li><strong>Diseño Adaptativo (RWD):</strong> Permite que una misma página web ofrezca una experiencia visual óptima en teléfonos, tablets y computadoras.</li>
+                <li><strong>Puntos de quiebre (Breakpoints):</strong> Umbrales clave donde la interfaz reorganiza su estructura o paleta de colores.</li>
             </ul>
         </section>
     </main>
+
 </body>
 </html>
