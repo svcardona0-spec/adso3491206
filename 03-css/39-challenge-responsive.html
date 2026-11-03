@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,198 +11,217 @@
         }
 
         .demo-container {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
+            background-color: #000000; 
+            border: 1px solid #0070f9;
             padding: 1.5rem;
             margin: 1.5rem auto;
-            max-width: 900px;
+            max-width: 1000px;
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
         .demo-container h3 {
-            color: #2c3e50;
+            color: #ffffff;
             margin-top: 0;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid #0070f9;
             padding-bottom: 0.5rem;
             text-align: center;
         }
 
         .demo-container > p {
             text-align: center;
-            color: #2c3e50;
+            color: #cfd8dc;
         }
 
-        /* Layout Responsivo del Reto: Sidebar + Contenido Principal + Tarjetas */
-        .dashboard-layout {
+        .ranma-grid {
             display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
             margin-top: 1.5rem;
         }
 
-        .dashboard-sidebar {
-            background-color: #2c3e50;
-            color: white;
-            padding: 1.25rem;
-            border-radius: 6px;
+        .character-card {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            align-items: center;
         }
 
-        .dashboard-sidebar h4 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 0.25rem;
+        .character-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
         }
 
-        .sidebar-link {
-            color: #ecf0f1;
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 4px;
-            transition: background 0.2s;
+        .character-name {
+            padding: 0.6rem;
+            color: #ffffff;
+            font-weight: bold;
             font-size: 0.9rem;
+            text-align: center;
+            width: 100%;
+            background-color: #111;
         }
 
-        .sidebar-link:hover {
-            background-color: rgba(255,255,255,0.1);
-        }
-
-        .dashboard-main {
+        .details-section {
+            margin-top: 2.5rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
         }
 
-        .dashboard-banner {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
+        .detail-card {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 8px;
             padding: 1.5rem;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .dashboard-banner h4 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.25rem;
-        }
-
-        .dashboard-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
+            grid-template-columns: 200px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        .card-item {
-            background-color: #ffffff;
-            border: 1px solid #dcdde1;
-            padding: 1rem;
-            text-align: center;
+        .detail-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
             border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            font-weight: bold;
-            color: #2c3e50;
+            background-color: #111;
+            padding: 10px;
         }
 
-        /* Media Query para pantallas pequeñas (Móviles / Tablets) */
+        .detail-content h4 {
+            color: #ffffff;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .detail-content p {
+            color: #cfd8dc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .ranma-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .dashboard-layout {
-                grid-template-columns: 1fr; /* Pasa de 2 columnas a 1 sola columna apilada */
-            }
-
-            .dashboard-sidebar {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-
-            .dashboard-sidebar h4 {
-                width: 100%;
+            .detail-card {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
+            .detail-card img {
+                max-width: 150px;
+                margin: 0 auto;
+            }
+        }
 
-            .sidebar-link {
-                padding: 0.25rem 0.5rem;
+        @media (max-width: 600px) {
+            .ranma-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         .property-list {
             list-style: none;
             padding: 0;
-            margin-top: 1.5rem;
+            margin-top: 2rem;
         }
 
         .property-list li {
-            background: #ffffff;
+            background: #1a1a1a;
             margin-bottom: 0.5rem;
             padding: 0.75rem 1rem;
-            border-left: 4px solid #3498db;
-            border-radius: 4px;
+            border-left: 4px solid #0070f9;
+            border-radius: 6px;
             font-family: monospace;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            color: #2c3e50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: #e2e8f0;
         }
     </style>
 </head>
-<body class="css">
+<body class="html">
+
     <nav class="back">
-        <a href="index.html">
-           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main>
+
+    <main class="container">
+        <!-- Encabezado institucional -->
         <header class="mainmenu internal">
             <h1>39-challenge-responsive</h1>
-            <p>Reto Práctico: Maquetación Web Adaptativa y Responsiva.</p>
-        </header>
-  <nav class="back">
-        <a href="index.html">
-           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
-        </a>
-    </nav>
-    <main>
-        <header class="mainmenu internal">
-            <h1>39-challenge-responsive</h1>
-            <p>Reto Práctico: Maquetación Web Adaptativa y Responsiva.</p>
+            <div class="logo-container">
+                <img src="../src/imgs/logo-css.png" alt="Logo CSS" class="module-logo">
+            </div>
+            <h3>Reto Maquetación Adaptativa (GATITOS)</h3>
         </header>
 
         <section class="demo-container">
-            <h3>Dashboard Responsivo con CSS Grid y Media Queries</h3>
-            <p>Ejemplo práctico que integra una estructura de panel de control adaptable. Redimensiona tu navegador para observar cómo la barra lateral se reorganiza automáticamente.</p>
+            <h3>Galería Superior y Fichas Descriptivas</h3>
+            <p>Estructura responsiva combinada utilizando CSS Grid para las miniaturas superiores y tarjetas flexibles para los detalles ampliados.</p>
 
-            <div class="dashboard-layout">
-                <aside class="dashboard-sidebar">
-                    <h4>Navegación</h4>
-                    <a href="#" class="sidebar-link">Inicio</a>
-                    <a href="#" class="sidebar-link">Analíticas</a>
-                    <a href="#" class="sidebar-link">Reportes</a>
-                    <a href="#" class="sidebar-link">Configuración</a>
-                </aside>
-
-                <div class="dashboard-main">
-                    <div class="dashboard-banner">
-                        <h4>Bienvenido al Panel</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: #ecf0f1;">Este diseño se adapta fluidamente a cualquier resolución de pantalla.</p>
-                    </div>
-
-                    <div class="dashboard-cards">
-                        <div class="card-item">Métrica A: 1,240</div>
-                        <div class="card-item">Métrica B: 85%</div>
-                        <div class="card-item">Métrica C: $12.4k</div>
-                    </div>
+            <!-- Galería Superior -->
+            <div class="ranma-grid">
+                <div class="character-card">
+                    <img src="../src/imgs/gatito1.jpg" alt="Michi 1">
+                    <div class="character-name">Michi 1</div>
+                </div>
+                <div class="character-card">
+                    <img src="../src/imgs/gatito2.jpg" alt="Michi 2">
+                    <div class="character-name">Michi 2</div>
+                </div>
+                <div class="character-card">
+                    <img src="../src/imgs/gatito3.jpg" alt="Michi 3">
+                    <div class="character-name">Michi 3</div>
+                </div>
+                <div class="character-card">
+                    <img src="../src/imgs/gatito4.jpg" alt="Michi 4">
+                    <div class="character-name">Michi 4</div>
                 </div>
             </div>
 
-            <ul class="property-list">
-                <li><strong>Grid Adaptativo:</strong> Utiliza <code>grid-template-columns</code> para estructurar paneles complejos sin romper el diseño base.</li>
-                <li><strong>Punto de quiebre (Breakpoint):</strong> Mediante <code>@media (max-width: 768px)</code> se transforma la disposición de filas a columnas apiladas.</li>
-                <li><strong>Flexibilidad visual:</strong> Garantiza una óptima lectura y experiencia de usuario tanto en escritorios como en dispositivos móviles.</li>
-            </ul>
+            <!-- Fichas Descriptivas Inferiores -->
+            <div class="details-section">
+                
+                <div class="detail-card">
+                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <div class="detail-content">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <div class="detail-content">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <div class="detail-content">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                    </div>
+                </div>
+
+            </div> 
         </section>
     </main>
+
 </body>
 </html>
