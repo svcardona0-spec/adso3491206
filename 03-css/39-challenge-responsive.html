@@ -1,269 +1,259 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>39-challenge-responsive - Sailor Moon</title>
-    <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
-            box-sizing: border-box;
+            transition: all 0.4s ease;
         }
+        body {
+            background: linear-gradient(transparent, skyblue),
+             url(../src/imgs/sailorfondo.jpg) no-repeat center top / contain ;
+            background-attachment: fixed;
+            font-family: sans-serif;
 
-        body.html {
-            background: linear-gradient(135deg, #1a0b2e 0%, #3b1456 50%, #0b1329 100%);
-            min-height: 100vh;
-        }
+            main {
+                background: linear-gradient(#000, transparent 96%);
+                border-radius: 12px;
+                corner-shape: squircle;
+                padding: 1rem;
+                min-height: 100dvh;
 
-        .demo-container {
-            background: linear-gradient(rgba(10, 10, 30, 0.75), rgba(20, 10, 40, 0.85)), url('../src/imgs/sailorfondo.jpg');
-            background-size: cover;
-            background-position: center;
-            border: 2px solid #ff69b4;
-            padding: 2rem;
-            margin: 1.5rem auto;
-            max-width: 1000px;
-            width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 35px rgba(255, 105, 180, 0.4);
-        }
+                img.logo {
+                    width: 480px;
+                    display: block;
+                    margin: 1rem auto;
+                    animation: 8s animLogo infinite ease;
+                }
+                section.characters {
+                    margin: 4rem auto;
+                    width: 1440px;
+                    object-fit: cover;
+                    
+                    figure.character {
+                        border-radius: 12px;
+                        outline: 4px solid #000;
+                        corner-shape: squircle;
+                        height: 260px;
+                        display: inline-block;
+                        overflow: hidden;
+                        padding: 0;
+                        position: relative;
+                        transition: all 5s ease;
+                        margin: 0 0.5rem;
+                        width: 340px;
 
-        .demo-container h3 {
-            color: #ffe600;
-            margin-top: 0;
-            border-bottom: 2px solid #ff69b4;
-            padding-bottom: 0.5rem;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-        }
+                        &.character01 {
+                            background: url(../src/imgs/sailorfondo.jpg) no-repeat;
+                            background-size: 100%;
+                           
+                        }
+                        &.character02 {
+                            background: url(../src/imgs/sailor2.jpg) no-repeat;
+                            background-size: 100%;
+                        }
+                        &.character03 {
+                            background: url(../src/imgs/sailor3.jpg) no-repeat;
+                            background-size: 100%;
+                            background-position: center top;
+                        }
+                        &.character04 {
+                            background: url(../src/imgs/sailor5.jpg) no-repeat;
+                            background-size: 100%;
+                        }
+                        &:hover {
+                            background-size: 110%;
 
-        .demo-container > p {
-            text-align: center;
-            color: #ffb6c1;
-            font-weight: 500;
-        }
+                            figcaption {
+                                color: #fff353;
+                                bottom: 0;
+                            }
+                        }
+                        figcaption {
+                            background-color: #000b;
+                            color: #fff;
+                            font-size: 1.4rem;
+                            border-top: 4px solid #000;
+                            position: absolute;
+                            bottom: -3rem;
+                            margin: 0;
+                            backdrop-filter: blur(4px);
+                            padding: 1rem 1rem 4rem 1rem;
+                            transition: all 0.4s 0.2s ease-out;
+                            width: 100%;
+                        }
+                    }
+                }
+                section.main-characters {
+                    article{
+                        outline: 4px solid #000;
+                        background: #000a;
+                        border-radius: 12px;
+                        color: #fff;
+                        corner-top-shape: squircle;
+                        padding: 1rem;
+                        margin: 2rem auto;
+                        width: 1388px;
 
+                        img.aside {
+                            display: inline-block;
+                            vertical-align: top;
+                        }
+                        img {
+                            filter: drop-shadow(0 0 8px #f060b4);
+                            object-fit: contain;
+                            height: 340px;
+                            margin-right: 2rem;
+                            width: 340px;
+                        }
+                        aside {
+                            width: 960px;
+                            display: inline-block;
+                            
 
-        .sailor-logo {
-            max-width: 280px;
-            height: auto;
-            filter: drop-shadow(0 4px 10px rgba(255, 105, 180, 0.6));
-            animation: floatLogo 3s infinite ease-in-out;
-        }
+                            h2 {
+                                color: #f060b4;
+                                margin-top: 0;
+                            }
+                            p {
+                                text-align: justify;
+                                line-height: 2rem;
+                            }
+                        }
+                        &:hover {
+                            background-color: #000c;
+                            backdrop-filter: blur(4px);
 
-        @keyframes floatLogo {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
+                            aside {
+                                h2{
+                                    color: #f060b4;
+                                    margin-top: 0;
+                                }
 
-        .ranma-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.25rem;
-            margin-top: 1.5rem;
-        }
-
-        .character-card {
-            background-color: rgba(26, 11, 46, 0.85);
-            border: 2px solid #ff69b4;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Movimiento elástico */
-            cursor: pointer;
-        }
-
-        .character-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            border-color: #ffe600;
-            box-shadow: 0 12px 25px rgba(255, 230, 0, 0.5);
-        }
-
-        .character-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .character-card:hover img {
-            transform: scale(1.1); 
-        }
-
-        .character-name {
-            padding: 0.7rem;
-            color: #ffffff;
-            font-weight: bold;
-            font-size: 0.95rem;
-            text-align: center;
-            width: 100%;
-            background-color: rgba(15, 5, 25, 0.9);
-            transition: color 0.3s ease;
-        }
-
-        .character-card:hover .character-name {
-            color: #ffe600;
-        }
-
-        .details-section {
-            margin-top: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .detail-card {
-            background-color: rgba(26, 11, 46, 0.9);
-            border: 2px solid #ff69b4;
-            border-radius: 12px;
-            padding: 1.5rem;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 1.5rem;
-            align-items: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-            transition: all 0.3s ease;
-        }
-
-        .detail-card:hover {
-            transform: translateX(6px);
-            border-color: #00ffff;
-            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
-        }
-
-        .detail-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: contain;
-            border-radius: 8px;
-            background-color: rgba(10, 5, 20, 0.9);
-            padding: 10px;
-            transition: transform 0.4s ease;
-        }
-
-        .detail-card:hover img {
-            transform: rotate(-3deg) scale(1.05);
-        }
-
-        .detail-content p {
-            color: #f0f0f5;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        @media (max-width: 900px) {
-            .ranma-grid {
-                grid-template-columns: repeat(2, 1fr);
+                                p {
+                                    margin: 1rem solid #f060b4;
+                                    text-align: justify;
+                                    line-height: 2rem;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-
-        @media (max-width: 768px) {
-            .detail-card {
-                grid-template-columns: 1fr;
-                text-align: center;
+        @keyframes animLogo {
+            0%, 100% {
+                transform: scale(1);
             }
-            .detail-card img {
-                max-width: 150px;
-                margin: 0 auto;
+            50% {
+                transform: scale(1.1);
             }
         }
+        @media (max-width: 1470px) {
+            body {
+                main {
+                    section.characters {
+                        width: 718px;
 
-        @media (max-width: 600px) {
-            .ranma-grid {
-                grid-template-columns: 1fr;
+                        figure.character {
+                        margin-bottom: 1rem;
+                        }
+                    }
+                    section.main-characters {
+                        article {
+                            width: 670px;
+
+                            img {
+                                margin-right: 1rem;
+                                width: 200px;
+                            }
+                            aside {
+                                width: 480px;
+                                
+                                p {
+                                    line-height: 1.6rem;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+        @media (max-width: 746px) {
+            body {
+                main {
+                    img.logo {
+                        width: 340px;
+                    }
+                    section.characters {
+                        width: 718px;
+                    }
+                    figure.characters {
+                        width: 400px;
+                        margin: 0.5rem auto;
+                    }
+                    section.main-characters {
+                        article {
+                            width: 670px;
 
-        .property-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 2rem;
-        }
-
-        .property-list li {
-            background: rgba(26, 11, 46, 0.9);
-            margin-bottom: 0.5rem;
-            padding: 0.75rem 1rem;
-            border-left: 4px solid #ffe600;
-            border-radius: 6px;
-            font-family: monospace;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-            color: #ffd700;
+                            img {
+                                margin-right: 1rem;
+                                display: block;
+                                width: 200px;
+                                margin: 0 auto;
+                            }
+                            aside {
+                                display: block;
+                                width: 370px;
+                            }
+                       }
+                    }
+                }
+            }
         }
     </style>
 </head>
-<body class="html">
-
-    <nav class="back">
-        <a href="index.html" title="Volver al menú">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
-                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
-            </svg>
-        </a>
-    </nav>
-
-    <main class="container">
-        <header class="mainmenu internal">
-            <div class="logo-container" style="margin-bottom: 10px;">
-                <img src="../src/imgs/logosailor.png" alt="Logo Sailor Moon" style="width: 320px; height: auto; border-radius: 0; background: transparent; border: none; box-shadow: none;" class="sailor-logo">
-            </div>
-            <h3>39-challenge-responsive - Sailor Moon Edition</h3>
-        </header>
-
-        <section class="demo-container">
-            <h3>Sailor Moon</h3>
-
-            <!-- Galería Superior -->
-            <div class="ranma-grid">
-                <div class="character-card">
-                    <img src="../src/imgs/sailor1.jpg" alt="Sailor Moon">
-                    <div class="character-name">Sailor Moon</div>
-                </div>
-                <div class="character-card">
-                    <img src="../src/imgs/sailor2.jpg" alt="Sailor Mercury">
-                    <div class="character-name">Luna</div>
-                </div>
-                <div class="character-card">
-                    <img src="../src/imgs/sailor3.jpg" alt="Sailor Mars">
-                    <div class="character-name">Sailor Sad</div>
-                </div>
-                <div class="character-card">
-                    <img src="../src/imgs/sailor5.jpg" alt="Sailor Venus">
-                    <div class="character-name">Sailor and Toxidomas</div>
-                </div>
-            </div>
-
-            <!-- Fichas Descriptivas Inferiores con Movimiento -->
-            <div class="details-section">
-                
-                <div class="detail-card">
-                    <img src="../src/imgs/sailor1.jpg" alt="Sailor Scout">
-                    <div class="detail-content">
-                        <p>"El poder del amor y la justicia guiará siempre nuestros pasos para proteger la Tierra de las fuerzas de la oscuridad. ¡En el nombre de la Luna, te castigaré!"</p>
-                    </div>
-                </div>
-
-                <div class="detail-card">
-                    <img src="../src/imgs/sailor2.jpg" alt="Sailor Scout">
-                    <div class="detail-content">
-                        <p>"Cada guerrera posee una estrella guardiana que le otorga fuerza y valor inquebrantables en los momentos de mayor desafío y misterio estelar."</p>
-                    </div>
-                </div>
-
-                <div class="detail-card">
-                    <img src="../src/imgs/sailor3.jpg" alt="Sailor Scout">
-                    <div class="detail-content">
-                        <p>"La unión y la amistad entre las Sailor Scouts forman el lazo cósmico más poderoso capaz de trascender cualquier dimensión y vencer el mal."</p>
-                    </div>
-                </div>
-
-            </div> 
+<body class="css">
+    <main>
+        <img class="logo" src="../src/imgs/logosailor.png" alt="Sailor Logo">
+        <section class="characters">
+            <figure class="character character01">
+                <figcaption>Sailor</figcaption>
+            </figure>
+            <figure class="character character02">
+                <figcaption>Luna</figcaption>
+            </figure>
+            <figure class="character character03">
+                <figcaption>Sailor Sad</figcaption>
+            </figure>
+            <figure class="character character04">
+                <figcaption>Toxidomas</figcaption>
+            </figure>
+        </section>
+        <section class="main-characters">
+            <article>
+                <img src="../src/imgs/sailor1.jpg" alt="Sailor Moon">
+                <aside>
+                    <h2>SAILOR</h2>
+                    <p>"El poder del amor y la justicia guiará siempre nuestros pasos para proteger la Tierra de las fuerzas de la oscuridad. ¡En el nombre de la Luna, te castigaré!"</p>
+                </aside>
+            </article>
+            <article>
+                <img src="../src/imgs/sailor2.jpg" alt="Luna">
+                <aside>
+                    <h2>LUNA</h2>
+                    <p>"Cada guerrera posee una estrella guardiana que le otorga fuerza y valor inquebrantables en los momentos de mayor desafío y misterio estelar."</p>
+                </aside>
+            </article>
+            <article>
+                <img src="../src/imgs/sailor3.jpg" alt="Sailor Sad">
+                <aside>
+                    <h2>SAILOR SAD</h2>
+                    <p>"La unión y la amistad entre las Sailor Scouts forman el lazo cósmico más poderoso capaz de trascender cualquier dimensión y vencer el mal."</p>
+                </aside>
+            </article>
         </section>
     </main>
-
 </body>
 </html>
