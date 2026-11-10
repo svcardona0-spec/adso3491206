@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>39-challenge-responsive</title>
+    <title>39-challenge-responsive - Sailor Moon</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
         * {
             box-sizing: border-box;
         }
 
+        body.html {
+            background: linear-gradient(135deg, #1a0b2e 0%, #3b1456 50%, #0b1329 100%);
+            min-height: 100vh;
+        }
+
         .demo-container {
-            background-color: #000000; 
-            border: 1px solid #0070f9;
-            padding: 1.5rem;
+            background: linear-gradient(rgba(10, 10, 30, 0.75), rgba(20, 10, 40, 0.85)), url('../src/imgs/sailorfondo.jpg');
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #ff69b4;
+            padding: 2rem;
             margin: 1.5rem auto;
             max-width: 1000px;
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(255, 105, 180, 0.4);
         }
 
         .demo-container h3 {
-            color: #ffffff;
+            color: #ffe600;
             margin-top: 0;
-            border-bottom: 2px solid #0070f9;
+            border-bottom: 2px solid #ff69b4;
             padding-bottom: 0.5rem;
             text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
         .demo-container > p {
             text-align: center;
-            color: #cfd8dc;
+            color: #ffb6c1;
+            font-weight: 500;
+        }
+
+
+        .sailor-logo {
+            max-width: 280px;
+            height: auto;
+            filter: drop-shadow(0 4px 10px rgba(255, 105, 180, 0.6));
+            animation: floatLogo 3s infinite ease-in-out;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
 
         .ranma-grid {
@@ -42,30 +64,48 @@
         }
 
         .character-card {
-            background-color: #1a1a1a;
-            border: 2px solid #333;
-            border-radius: 8px;
+            background-color: rgba(26, 11, 46, 0.85);
+            border: 2px solid #ff69b4;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Movimiento elástico */
+            cursor: pointer;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: #ffe600;
+            box-shadow: 0 12px 25px rgba(255, 230, 0, 0.5);
         }
 
         .character-card img {
             width: 100%;
             height: 150px;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .character-card:hover img {
+            transform: scale(1.1); 
         }
 
         .character-name {
-            padding: 0.6rem;
+            padding: 0.7rem;
             color: #ffffff;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-align: center;
             width: 100%;
-            background-color: #111;
+            background-color: rgba(15, 5, 25, 0.9);
+            transition: color 0.3s ease;
+        }
+
+        .character-card:hover .character-name {
+            color: #ffe600;
         }
 
         .details-section {
@@ -76,37 +116,42 @@
         }
 
         .detail-card {
-            background-color: #1a1a1a;
-            border: 2px solid #333;
-            border-radius: 8px;
+            background-color: rgba(26, 11, 46, 0.9);
+            border: 2px solid #ff69b4;
+            border-radius: 12px;
             padding: 1.5rem;
             display: grid;
             grid-template-columns: 200px 1fr;
             gap: 1.5rem;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateX(6px);
+            border-color: #00ffff;
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.3);
         }
 
         .detail-card img {
             width: 100%;
             height: 180px;
             object-fit: contain;
-            border-radius: 6px;
-            background-color: #111;
+            border-radius: 8px;
+            background-color: rgba(10, 5, 20, 0.9);
             padding: 10px;
+            transition: transform 0.4s ease;
         }
 
-        .detail-content h4 {
-            color: #ffffff;
-            margin-top: 0;
-            margin-bottom: 0.75rem;
-            font-size: 1.2rem;
+        .detail-card:hover img {
+            transform: rotate(-3deg) scale(1.05);
         }
 
         .detail-content p {
-            color: #cfd8dc;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: #f0f0f5;
+            font-size: 0.95rem;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -140,14 +185,14 @@
         }
 
         .property-list li {
-            background: #1a1a1a;
+            background: rgba(26, 11, 46, 0.9);
             margin-bottom: 0.5rem;
             padding: 0.75rem 1rem;
-            border-left: 4px solid #0070f9;
+            border-left: 4px solid #ffe600;
             border-radius: 6px;
             font-family: monospace;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            color: #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            color: #ffd700;
         }
     </style>
 </head>
@@ -162,60 +207,57 @@
     </nav>
 
     <main class="container">
-        <!-- Encabezado institucional -->
         <header class="mainmenu internal">
-            <h1>39-challenge-responsive</h1>
-            <div class="logo-container">
-                <img src="../src/imgs/logo-css.png" alt="Logo CSS" class="module-logo">
+            <div class="logo-container" style="margin-bottom: 10px;">
+                <img src="../src/imgs/logosailor.png" alt="Logo Sailor Moon" style="width: 320px; height: auto; border-radius: 0; background: transparent; border: none; box-shadow: none;" class="sailor-logo">
             </div>
-            <h3>Reto Maquetación Adaptativa (GATITOS)</h3>
+            <h3>39-challenge-responsive - Sailor Moon Edition</h3>
         </header>
 
         <section class="demo-container">
-            <h3>Galería Superior y Fichas Descriptivas</h3>
-            <p>Estructura responsiva combinada utilizando CSS Grid para las miniaturas superiores y tarjetas flexibles para los detalles ampliados.</p>
+            <h3>Sailor Moon</h3>
 
             <!-- Galería Superior -->
             <div class="ranma-grid">
                 <div class="character-card">
-                    <img src="../src/imgs/gatito1.jpg" alt="Michi 1">
-                    <div class="character-name">Michi 1</div>
+                    <img src="../src/imgs/sailor1.jpg" alt="Sailor Moon">
+                    <div class="character-name">Sailor Moon</div>
                 </div>
                 <div class="character-card">
-                    <img src="../src/imgs/gatito2.jpg" alt="Michi 2">
-                    <div class="character-name">Michi 2</div>
+                    <img src="../src/imgs/sailor2.jpg" alt="Sailor Mercury">
+                    <div class="character-name">Luna</div>
                 </div>
                 <div class="character-card">
-                    <img src="../src/imgs/gatito3.jpg" alt="Michi 3">
-                    <div class="character-name">Michi 3</div>
+                    <img src="../src/imgs/sailor3.jpg" alt="Sailor Mars">
+                    <div class="character-name">Sailor Sad</div>
                 </div>
                 <div class="character-card">
-                    <img src="../src/imgs/gatito4.jpg" alt="Michi 4">
-                    <div class="character-name">Michi 4</div>
+                    <img src="../src/imgs/sailor5.jpg" alt="Sailor Venus">
+                    <div class="character-name">Sailor and Toxidomas</div>
                 </div>
             </div>
 
-            <!-- Fichas Descriptivas Inferiores -->
+            <!-- Fichas Descriptivas Inferiores con Movimiento -->
             <div class="details-section">
                 
                 <div class="detail-card">
-                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <img src="../src/imgs/sailor1.jpg" alt="Sailor Scout">
                     <div class="detail-content">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                        <p>"El poder del amor y la justicia guiará siempre nuestros pasos para proteger la Tierra de las fuerzas de la oscuridad. ¡En el nombre de la Luna, te castigaré!"</p>
                     </div>
                 </div>
 
                 <div class="detail-card">
-                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <img src="../src/imgs/sailor2.jpg" alt="Sailor Scout">
                     <div class="detail-content">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                        <p>"Cada guerrera posee una estrella guardiana que le otorga fuerza y valor inquebrantables en los momentos de mayor desafío y misterio estelar."</p>
                     </div>
                 </div>
 
                 <div class="detail-card">
-                    <img src="../src/imgs/michi.png" alt="Michis">
+                    <img src="../src/imgs/sailor3.jpg" alt="Sailor Scout">
                     <div class="detail-content">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+                        <p>"La unión y la amistad entre las Sailor Scouts forman el lazo cósmico más poderoso capaz de trascender cualquier dimensión y vencer el mal."</p>
                     </div>
                 </div>
 
