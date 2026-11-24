@@ -1,124 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>40-steps</title>
+    <title>40-steps - Sprite Animation</title>
     <link rel="stylesheet" href="../src/css/styles.css">
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .demo-container {
-            background-color: #f8f9fa;
-            border: 1px solid #dee2e6;
-            padding: 1.5rem;
-            margin: 1.5rem auto;
-            max-width: 850px;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .demo-container h3 {
-            color: #2c3e50;
-            margin-top: 0;
-            border-bottom: 2px solid #9b59b6;
-            padding-bottom: 0.5rem;
-            text-align: center;
-        }
-
-        .demo-container > p {
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        .steps-demo-box {
+        /* Bloquear el scroll de la página por completo */
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #1b263b, #0d1b2a);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #ffffff;
-            border: 1px solid #dcdde1;
-            padding: 2rem;
-            border-radius: 6px;
-            margin-top: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            color: #ffffff;
         }
 
-        /* Simulador de Sprite Sheet animado por pasos (steps) */
-        .sprite-container {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #9b59b6, #3498db);
+        .demo-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 420px;
+            background-image: url('../src/imgs/bg-steps.png');
+            background-size: cover;
+            background-position: center;
             border-radius: 12px;
+            border: 3px solid #415a77;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            animation: spriteSteps 2s steps(5, end) infinite;
+            overflow: hidden;
         }
 
-        @keyframes spriteSteps {
-            0% {
-                transform: translateX(0) rotate(0deg);
-                background-color: #9b59b6;
+        /* Texto de información de las flechas */
+        .info {
+            position: absolute;
+            top: 15px;
+            background-color: rgba(0, 0, 0, 0.75);
+            color: #e0fbfc;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid #778da9;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        /* Contenedor del personaje con proporciones rectangulares exactas */
+        #trainer {
+            width: 32px;
+            height: 48px;
+            background-image: url('../src/imgs/steps-01.png');
+            background-repeat: no-repeat;
+            background-size: 128px 192px; /* Escala exacta 4x4 fotogramas de 32x48 */
+            position: absolute;
+            bottom: 60px; /* Posición inicial centrada frente a la puerta */
+            left: 234px;
+            z-index: 5;
+            image-rendering: pixelated; /* Mantiene los píxeles nítidos estilo retro */
+        }
+
+        /* Direcciones / Filas de la hoja de sprites usando steps(4) */
+        #trainer.front {
+            background-position: 0px 0px;
+            animation: walkAnim 0.6s steps(4) infinite;
+        }
+
+        #trainer.back {
+            background-position: 0px -48px;
+            animation: walkAnim 0.6s steps(4) infinite;
+        }
+
+        #trainer.left {
+            background-position: 0px -96px;
+            animation: walkAnim 0.6s steps(4) infinite;
+        }
+
+        #trainer.right {
+            background-position: 0px -144px;
+            animation: walkAnim 0.6s steps(4) infinite;
+        }
+
+        /* Animación de los 4 fotogramas en horizontal */
+        @keyframes walkAnim {
+            from {
+                background-position-x: 0px;
             }
-            100% {
-                transform: translateX(200px) rotate(360deg);
-                background-color: #e74c3c;
+            to {
+                background-position-x: -128px;
             }
-        }
-
-        .property-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 1.5rem;
-        }
-
-        .property-list li {
-            background: #ffffff;
-            margin-bottom: 0.5rem;
-            padding: 0.75rem 1rem;
-            border-left: 4px solid #9b59b6;
-            border-radius: 4px;
-            font-family: monospace;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            color: #2c3e50;
         }
     </style>
 </head>
-<body>
-    <nav class="back">
-        <a href="../index.html">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+<body class="html">
+
+    <!-- Botón de navegación para regresar -->
+    <nav class="back" style="position: absolute; top: 15px; left: 15px; z-index: 100;">
+        <a href="index.html" title="Volver al menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#ffffff" d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+            </svg>
         </a>
     </nav>
-    <main>
-        <header class="mainmenu internal">
-            <h1>40-steps</h1>
-            <p>Allows step-by-step animation of a sprite.</p>
+
+    <main class="container" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+        <!-- Encabezado con el logo de CSS completo -->
+        <header class="mainmenu internal" style="text-align: center; margin-bottom: 8px;">
+            <h1 style="font-size: 1.5rem; margin-bottom: 2px;">40-steps</h1>
+            <div class="logo-container" style="margin: 2px 0;">
+                <img src="../src/imgs/logo-css.png" alt="Logo CSS" style="width: 110px; height: auto; border-radius: 0; background: transparent; border: none; box-shadow: none;" class="module-logo">
+            </div>
+            <p style="color: #a0aec0; font-size: 0.85rem; max-width: 480px; margin: 2px 0;">Allows step-by-step animation of a sprite using the CSS steps() timing function.</p>
         </header>
 
-        <section class="demo-container">
-            <h3>Función de Tiempo Steps (Animación por Fotogramas / Sprites)</h3>
-            <p>La función <code>steps(n, direction)</code> divide una animación en intervalos discretos o fotogramas específicos en lugar de una transición fluida continua.</p>
-
-            <div class="steps-demo-box">
-                <div class="sprite-container">Steps</div>
-                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #7f8c8d;">Animación con saltos discretos utilizando <code>steps(5, end)</code></p>
+        <!-- Escenario del reto -->
+        <div class="demo-container">
+            <!-- Instrucción de teclas -->
+            <div class="info">
+                Please press arrow keys &larr; &uarr; &rarr; &darr;
             </div>
 
-            <ul class="property-list">
-                <li><strong>steps(number, start|end):</strong> Divide el tiempo de la animación en un número exacto de pasos iguales.</li>
-                <li><strong>Uso en Spritesheets:</strong> Es ideal para animaciones de personajes o iconos tipo pixel art donde la imagen salta de un frame al siguiente sin difuminado.</li>
-                <li><strong>Comportamiento (end/start):</strong> Define si el salto de fotograma ocurre al inicio o al final de cada intervalo del ciclo.</li>
-            </ul>
-        </section>
+            <!-- Personaje sprite con clase por defecto 'front' -->
+            <div id="trainer" class="front"></div>
+        </div>
     </main>
+
+    <!-- Script JavaScript para controlar el movimiento y las direcciones con las teclas -->
+    <script>
+        const trainer = document.getElementById('trainer');
+        
+        let posX = 234;
+        let posY = 60;
+        const step = 8;
+
+        window.addEventListener('keydown', (event) => {
+            switch (event.code) {
+                case 'ArrowUp':
+                    trainer.className = 'back';
+                    posY += step; // Sube dentro de la casa
+                    if (posY > 180) posY = 180;
+                    trainer.style.bottom = posY + 'px';
+                    break;
+                case 'ArrowDown':
+                    trainer.className = 'front';
+                    posY -= step; // Baja hacia la entrada
+                    if (posY < 30) posY = 30;
+                    trainer.style.bottom = posY + 'px';
+                    break;
+                case 'ArrowLeft':
+                    trainer.className = 'left';
+                    posX -= step; // Se mueve a la izquierda
+                    if (posX < 40) posX = 40;
+                    trainer.style.left = posX + 'px';
+                    break;
+                case 'ArrowRight':
+                    trainer.className = 'right';
+                    posX += step; // Se mueve a la derecha
+                    if (posX < 430) posX = 430;
+                    trainer.style.left = posX + 'px';
+                    break;
+            }
+        });
+    </script>
+
 </body>
 </html>
